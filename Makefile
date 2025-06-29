@@ -1,0 +1,2 @@
+get:
+	melos run get

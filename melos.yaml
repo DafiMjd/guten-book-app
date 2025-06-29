@@ -1,0 +1,15 @@
+name: guten_book
+
+packages:
+  - apps/**
+  - shared/**
+
+scripts:
+  get:
+    exec: flutter pub get .
+  clean:
+    exec: flutter clean .
+  build:
+    exec: dart run build_runner build --delete-conflicting-outputs
+  watch:
+    run: dart run build_runner watch --delete-conflicting-outputs

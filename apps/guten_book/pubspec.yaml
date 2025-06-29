@@ -1,0 +1,65 @@
+name: guten_book
+description: "A new Flutter project."
+publish_to: none
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  component:
+    path: ../../shared/component
+  domain:
+    path: ../../shared/domain
+  dependencies:
+    path: ../../shared/dependencies
+  network:
+    path: ../../shared/network
+
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_flavorizr: ^2.4.1
+
+  flutter_lints: ^5.0.0
+
+flavorizr:
+  flavors:
+    prod:
+      app:
+        name: "Guten Book"
+
+      android:
+        applicationId: "com.guten.book"
+
+      ios:
+        bundleId: "com.guten.book"
+
+    staging:
+      app:
+        name: "Guten Book Staging"
+
+      android:
+        applicationId: "com.guten.book.staging"
+
+      ios:
+        bundleId: "com.guten.book.staging"
+
+    dev:
+      app:
+        name: "Guten Book Dev"
+
+      android:
+        applicationId: "com.guten.book.dev"
+
+      ios:
+        bundleId: "com.guten.book.dev"
+
+flutter:
+  uses-material-design: true

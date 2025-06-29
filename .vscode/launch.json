@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "name": "Dev",
+            "request": "launch",
+            "type": "dart",
+            "program": "apps/guten_book/lib/launcher/main_dev.dart",
+            "args": [
+                "--flavor",
+                "dev"
+            ]
+        },
+        {
+            "name": "Staging",
+            "request": "launch",
+            "type": "dart",
+            "program": "apps/guten_book/lib/launcher/main_staging.dart",
+            "args": [
+                "--flavor",
+                "staging"
+            ]
+        },
+        {
+            "name": "Prod",
+            "request": "launch",
+            "type": "dart",
+            "program": "apps/guten_book/lib/launcher/main_prod.dart",
+            "args": [
+                "--flavor",
+                "prod"
+            ]
+        }
+    ]
+}
