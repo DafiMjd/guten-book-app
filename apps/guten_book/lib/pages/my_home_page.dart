@@ -1,6 +1,8 @@
 import 'package:data/data.dart';
 import 'package:flutter/material.dart';
+import '../local_dependencies.dart';
 
+@RoutePage()
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 

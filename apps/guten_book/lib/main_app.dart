@@ -1,43 +1,24 @@
 import 'package:data/data.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/my_home_page.dart';
 
-class App extends StatefulWidget {
-  const App({super.key});
-
-  @override
-  State<App> createState() => _AppState();
-}
-
-class _AppState extends State<App> {
-  @override
-  void initState() {
-    super.initState();
-
-    getBooks();
-  }
-
-  Future<void> getBooks() async {
-    try {
-      final res = await ApiServices.request(
-        path: '/books',
-        method: HttpRequestMethod.get,
-      );
-
-      print(res);
-    } catch (e) {
-      print(e);
-    }
-  }
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: F.title,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: _flavorBanner(child: const MyHomePage(), show: kDebugMode),
+    return ScreenUtilInit(
+      designSize: const Size(360, 800),
+      builder: (context, _) {
+        return MaterialApp(
+          title: F.title,
+          theme: ThemeData(primarySwatch: Colors.blue),
+          home: _flavorBanner(child: const MyHomePage(), show: kDebugMode),
+        );
+      },
     );
   }
 

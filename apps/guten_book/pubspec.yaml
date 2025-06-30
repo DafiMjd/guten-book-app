@@ -5,9 +5,10 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.7.2
+  sdk: ">=3.8.0 <4.0.0"
 
 dependencies:
+  auto_route: ^10.1.0+1
   component:
     path: ../../shared/component
   cupertino_icons: ^1.0.8
@@ -19,9 +20,12 @@ dependencies:
     path: ../../shared/domain
   flutter:
     sdk: flutter
+  flutter_bloc: ^9.1.1
 
 
 dev_dependencies:
+  auto_route_generator: ^10.2.3
+  build_runner:
   flutter_flavorizr: ^2.4.1
   flutter_lints: ^5.0.0
   flutter_test:

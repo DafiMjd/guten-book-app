@@ -6,14 +6,14 @@ packages:
 
 scripts:
   analyze:
-    exec: dart analyze .
+    exec: fvm dart analyze .
   format:
-    exec: dart format --set-exit-if-changed .
+    exec: fvm dart format --set-exit-if-changed .
   get:
-    exec: flutter pub get .
+    exec: fvm flutter pub get .
   clean:
-    exec: flutter clean .
+    exec: fvm flutter clean .
   build:
-    exec: dart run build_runner build --delete-conflicting-outputs
+    exec: fvm dart run build_runner build --delete-conflicting-outputs
   watch:
-    run: dart run build_runner watch --delete-conflicting-outputs
+    run: fvm dart run build_runner watch --delete-conflicting-outputs
