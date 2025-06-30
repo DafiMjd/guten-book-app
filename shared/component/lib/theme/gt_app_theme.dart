@@ -9,17 +9,17 @@ class GtAppTheme {
   static TextTheme textTheme = const TextTheme(
     bodyLarge: TextStyle(
       fontSize: 14.0,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
       color: Colors.white,
     ),
     bodyMedium: TextStyle(
       fontSize: 12.0,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
       color: Colors.white,
     ),
     bodySmall: TextStyle(
       fontSize: 10.0,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
       color: Colors.white,
     ),
     titleLarge: TextStyle(

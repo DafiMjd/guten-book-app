@@ -9,8 +9,7 @@ class GtExtendedImageNetwork extends StatelessWidget {
     this.colorFilter,
     this.borderRadius = 0,
     this.compressionRatio,
-    this.customProgressIndicator,
-    this.isUseBuilder = true,
+    this.loadingWidget,
     this.filterQuality,
     this.height,
     this.width,
@@ -23,9 +22,8 @@ class GtExtendedImageNetwork extends StatelessWidget {
   final BoxFit? fit;
   final ColorFilter? colorFilter;
   final double? borderRadius;
-  final Widget? customProgressIndicator;
+  final Widget? loadingWidget;
   final double? compressionRatio;
-  final bool isUseBuilder;
   final Widget? errorWidget;
   final FilterQuality? filterQuality;
 
@@ -56,7 +54,7 @@ class GtExtendedImageNetwork extends StatelessWidget {
               height: height,
               width: width,
               child:
-                  customProgressIndicator ??
+                  loadingWidget ??
                   CircularProgressIndicator(
                     constraints: BoxConstraints(
                       maxWidth: 32.w,

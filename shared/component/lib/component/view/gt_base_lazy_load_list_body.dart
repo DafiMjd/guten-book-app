@@ -2,6 +2,8 @@ import 'package:dependencies/dependencies.dart' as dep;
 import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 
+import '../../component.dart';
+
 /// T -> Data Type
 class GtBaseLazyLoadListBody<T> extends StatelessWidget {
   const GtBaseLazyLoadListBody({
@@ -38,17 +40,20 @@ class GtBaseLazyLoadListBody<T> extends StatelessWidget {
     final isLazyLoadError = loadState.isError && isDataExists;
 
     if (isFirstLoading) {
-      return dep.Skeletonizer(
-        child: ListView.separated(
-          padding: padding,
-          itemCount: 7,
-          itemBuilder: (_, __) => loadingSkeletonWidget,
-          separatorBuilder:
-              separatorBuilder ?? (_, __) => const SizedBox.shrink(),
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const CircularProgressIndicator(),
+            dep.Gap(16.w),
+            Text('Loading', style: GtAppTheme.textTheme.bodyMedium),
+          ],
         ),
       );
     } else if (isFirstError) {
-      return Text(loadState.errorOrNull?.message ?? 'Error Occured');
+      return Center(
+        child: Text(loadState.errorOrNull?.message ?? 'Error Occured'),
+      );
     } else {
       return RefreshIndicator(
         onRefresh: onRefresh ?? () async {},
@@ -66,7 +71,8 @@ class GtBaseLazyLoadListBody<T> extends StatelessWidget {
           },
           hasError: isLazyLoadError,
           emptyBuilder: (_) => emptyWidget ?? const SizedBox(),
-          errorBuilder: (context) => Text(loadState.errorOrNull?.message ?? 'Error Occured'),
+          errorBuilder: (context) =>
+              Text(loadState.errorOrNull?.message ?? 'Error Occured'),
           hasReachedMax: hasReachedMax,
         ),
       );
