@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AuthorEntity {
 
- String get name; int get birthYear; int get deathYear;
+ String get name; int? get birthYear; int? get deathYear;
 /// Create a copy of AuthorEntity
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -47,7 +47,7 @@ abstract mixin class $AuthorEntityCopyWith<$Res>  {
   factory $AuthorEntityCopyWith(AuthorEntity value, $Res Function(AuthorEntity) _then) = _$AuthorEntityCopyWithImpl;
 @useResult
 $Res call({
- String name, int birthYear, int deathYear
+ String name, int? birthYear, int? deathYear
 });
 
 
@@ -64,12 +64,12 @@ class _$AuthorEntityCopyWithImpl<$Res>
 
 /// Create a copy of AuthorEntity
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? birthYear = null,Object? deathYear = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? birthYear = freezed,Object? deathYear = freezed,}) {
   return _then(AuthorEntity(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,birthYear: null == birthYear ? _self.birthYear : birthYear // ignore: cast_nullable_to_non_nullable
-as int,deathYear: null == deathYear ? _self.deathYear : deathYear // ignore: cast_nullable_to_non_nullable
-as int,
+as String,birthYear: freezed == birthYear ? _self.birthYear : birthYear // ignore: cast_nullable_to_non_nullable
+as int?,deathYear: freezed == deathYear ? _self.deathYear : deathYear // ignore: cast_nullable_to_non_nullable
+as int?,
   ));
 }
 
