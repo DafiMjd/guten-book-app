@@ -14,3 +14,8 @@ watch_app:
 	cd apps/guten_book && fvm dart run build_runner watch --delete-conflicting-outputs && cd ../..
 build_app:
 	cd apps/guten_book && fvm dart run build_runner build --delete-conflicting-outputs && cd ../..
+
+watch_component:
+	cd shared/component && fvm dart run build_runner watch --delete-conflicting-outputs && cd ../..
+build_component:
+	cd shared/component && fvm dart run build_runner build --delete-conflicting-outputs && cd ../..

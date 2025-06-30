@@ -17,11 +17,19 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
+  build_runner:
+  flutter_gen_runner:
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
 
+flutter_gen:
+  output: lib/assets/
+  line_length: 80
+
 flutter:
+  assets:
+    - asset/book/img/
   fonts:
     - family: Inter
       fonts:
