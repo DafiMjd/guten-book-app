@@ -1,11 +1,12 @@
 import 'package:data/data.dart';
 
 import '../domain.dart';
+import '../get_it/app_get_it.dart';
 
 class BookUsecase {
   final BookRepository repo;
 
-  BookUsecase({required this.repo});
+  BookUsecase() : repo = getIt<BookRepository>();
 
   Future<Either<ResponseBookEntity>> getBooks() async {
     try {
