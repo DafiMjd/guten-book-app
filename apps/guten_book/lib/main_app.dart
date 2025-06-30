@@ -1,7 +1,6 @@
 import 'package:component/component.dart';
 import 'package:data/data.dart';
 import 'package:dependencies/dependencies.dart';
-import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 
 import 'dev_tool_fab.dart';

@@ -1,3 +1,4 @@
+import 'package:data/data.dart';
 import 'package:domain/domain.dart';
 import '../../../local_dependencies.dart';
 
