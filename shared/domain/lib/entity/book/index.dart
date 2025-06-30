@@ -1,3 +1,5 @@
 export 'author_entity.dart';
 export 'book_entity.dart';
+export 'book_entity_grid.dart';
+export 'param/index.dart';
 export 'response/index.dart';

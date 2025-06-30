@@ -7,24 +7,36 @@ part of 'book_entity.dart';
 // **************************************************************************
 
 BookEntity _$BookEntityFromJson(Map<String, dynamic> json) => BookEntity(
-  id: (json['id'] as num).toInt(),
-  title: json['title'] as String,
+  id: (json['id'] as num?)?.toInt() ?? 0,
+  title: json['title'] as String? ?? '',
   authors:
-      (json['authors'] as List<dynamic>)
-          .map((e) => AuthorEntity.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      (json['authors'] as List<dynamic>?)
+          ?.map((e) => AuthorEntity.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      [],
   summaries:
-      (json['summaries'] as List<dynamic>).map((e) => e as String).toList(),
-  translators: json['translators'] as List<dynamic>,
+      (json['summaries'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      [],
+  translators:
+      (json['translators'] as List<dynamic>?)
+          ?.map((e) => AuthorEntity.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      [],
   subjects:
-      (json['subjects'] as List<dynamic>).map((e) => e as String).toList(),
+      (json['subjects'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      [],
   bookshelves:
-      (json['bookshelves'] as List<dynamic>).map((e) => e as String).toList(),
+      (json['bookshelves'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      [],
   languages:
-      (json['languages'] as List<dynamic>).map((e) => e as String).toList(),
-  copyright: json['copyright'] as bool,
-  mediaType: json['mediaType'] as String,
-  downloadCount: (json['downloadCount'] as num).toInt(),
+      (json['languages'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+      [],
+  copyright: json['copyright'] as bool? ?? false,
+  mediaType: json['mediaType'] as String? ?? '',
+  downloadCount: (json['downloadCount'] as num?)?.toInt() ?? 0,
+  formats: FormatsEntity.fromJson(json['formats'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$BookEntityToJson(BookEntity instance) =>
@@ -40,4 +52,5 @@ Map<String, dynamic> _$BookEntityToJson(BookEntity instance) =>
       'copyright': instance.copyright,
       'mediaType': instance.mediaType,
       'downloadCount': instance.downloadCount,
+      'formats': instance.formats,
     };

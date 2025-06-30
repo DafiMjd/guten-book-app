@@ -46,7 +46,20 @@ class FormatsEntity with _$FormatsEntity {
   @JsonKey(name: 'application/octet-stream')
   final String? applicationOctetStream;
 
-  factory FormatsEntity.fromJson(Map<String, Object?> json) => _$FormatsEntityFromJson(json);
+  factory FormatsEntity.empty() => const FormatsEntity(
+    textHtml: '',
+    textHtmlCharsetUtf8: '',
+    applicationEpubZip: '',
+    applicationXMobipocketEbook: '',
+    textPlainCharsetUsAscii: '',
+    textPlainCharsetUtf8: '',
+    applicationRdfXml: '',
+    imageJpeg: '',
+    applicationOctetStream: '',
+  );
+
+  factory FormatsEntity.fromJson(Map<String, Object?> json) =>
+      _$FormatsEntityFromJson(json);
 
   Map<String, Object?> toJson() => _$FormatsEntityToJson(this);
 }

@@ -7,9 +7,9 @@ part of 'author_entity.dart';
 // **************************************************************************
 
 AuthorEntity _$AuthorEntityFromJson(Map<String, dynamic> json) => AuthorEntity(
-  name: json['name'] as String,
-  birthYear: (json['birthYear'] as num).toInt(),
-  deathYear: (json['deathYear'] as num).toInt(),
+  name: json['name'] as String? ?? '',
+  birthYear: (json['birthYear'] as num?)?.toInt() ?? 0,
+  deathYear: (json['deathYear'] as num?)?.toInt() ?? 0,
 );
 
 Map<String, dynamic> _$AuthorEntityToJson(AuthorEntity instance) =>
