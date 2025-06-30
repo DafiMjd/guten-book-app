@@ -1,1 +1,1 @@
-export 'app_get_it.dart';
+export 'domain_get_it.dart';

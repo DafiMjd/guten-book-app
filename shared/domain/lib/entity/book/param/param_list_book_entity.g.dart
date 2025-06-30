@@ -14,4 +14,7 @@ ParamListBookEntity _$ParamListBookEntityFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ParamListBookEntityToJson(
   ParamListBookEntity instance,
-) => <String, dynamic>{'page': instance.page, 'search': instance.search};
+) => <String, dynamic>{
+  'page': instance.page,
+  if (instance.search case final value?) 'search': value,
+};

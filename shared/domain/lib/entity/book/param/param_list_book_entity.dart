@@ -4,7 +4,7 @@ part 'param_list_book_entity.freezed.dart';
 part 'param_list_book_entity.g.dart';
 
 @freezed
-@JsonSerializable()
+@JsonSerializable(includeIfNull: false)
 class ParamListBookEntity with _$ParamListBookEntity {
   const ParamListBookEntity({
     required this.page,

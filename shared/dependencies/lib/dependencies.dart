@@ -1,3 +1,4 @@
+export 'package:alice_lightweight/alice.dart';
 export 'package:extended_image/extended_image.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:gap/gap.dart';
