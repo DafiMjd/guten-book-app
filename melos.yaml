@@ -5,6 +5,10 @@ packages:
   - shared/**
 
 scripts:
+  analyze:
+    exec: dart analyze .
+  format:
+    exec: dart format --set-exit-if-changed .
   get:
     exec: flutter pub get .
   clean:
