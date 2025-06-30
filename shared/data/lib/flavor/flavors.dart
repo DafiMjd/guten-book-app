@@ -1,7 +1,11 @@
 enum Flavor {
   prod,
   staging,
-  dev,
+  dev;
+
+  bool get isDev => this == Flavor.dev;
+  bool get isStaging => this == Flavor.staging;
+  bool get isProd => this == Flavor.prod;
 }
 
 class F {
@@ -19,5 +23,4 @@ class F {
         return 'Guten Book Dev';
     }
   }
-
 }

@@ -4,20 +4,23 @@ part 'author_entity.freezed.dart';
 part 'author_entity.g.dart';
 
 @freezed
-@JsonSerializable()
+@JsonSerializable(includeIfNull: true)
 class AuthorEntity with _$AuthorEntity {
   const AuthorEntity({
     required this.name,
-    required this.birthYear,
-    required this.deathYear,
+    this.birthYear,
+    this.deathYear,
   });
 
   @override
+  @JsonKey(defaultValue: '')
   final String name;
   @override
-  final int birthYear;
+  @JsonKey(defaultValue: 0)
+  final int? birthYear;
   @override
-  final int deathYear;
+  @JsonKey(defaultValue: 0)
+  final int? deathYear;
 
   factory AuthorEntity.fromJson(Map<String, Object?> json) => _$AuthorEntityFromJson(json);
 

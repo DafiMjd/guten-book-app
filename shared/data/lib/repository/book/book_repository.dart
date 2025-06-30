@@ -1,3 +1,3 @@
 abstract class BookRepository {
-  Future<Map<String, dynamic>> getBooks();
+  Future<Map<String, dynamic>> getBooks(Map<String, dynamic>? params);
 }

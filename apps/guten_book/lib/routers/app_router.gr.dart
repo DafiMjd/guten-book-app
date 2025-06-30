@@ -10,20 +10,20 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i2;
-import 'package:guten_book/pages/my_home_page.dart' as _i1;
+import 'package:guten_book/features/home/pages/home_page.dart' as _i1;
 
 /// generated route for
-/// [_i1.MyHomePage]
-class MyHomeRoute extends _i2.PageRouteInfo<void> {
-  const MyHomeRoute({List<_i2.PageRouteInfo>? children})
-    : super(MyHomeRoute.name, initialChildren: children);
+/// [_i1.HomePage]
+class HomeRoute extends _i2.PageRouteInfo<void> {
+  const HomeRoute({List<_i2.PageRouteInfo>? children})
+    : super(HomeRoute.name, initialChildren: children);
 
-  static const String name = 'MyHomeRoute';
+  static const String name = 'HomeRoute';
 
   static _i2.PageInfo page = _i2.PageInfo(
     name,
     builder: (data) {
-      return const _i1.MyHomePage();
+      return const _i1.HomePage();
     },
   );
 }
