@@ -1,3 +1,4 @@
+import 'package:data/data.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:floating_draggable_widget/floating_draggable_widget.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,9 @@ class DevToolFab extends StatelessWidget {
     return FloatingDraggableWidget(
       mainScreenWidget: mainScreenWidget,
       floatingWidget: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          getIt<Alice>().showInspector();
+        },
         child: const Icon(Icons.settings),
       ),
       floatingWidgetHeight: 40,
