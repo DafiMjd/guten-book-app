@@ -11,14 +11,14 @@ dependencies:
   component:
     path: ../../shared/component
   cupertino_icons: ^1.0.8
+  data:
+    path: ../../shared/data
   dependencies:
     path: ../../shared/dependencies
   domain:
     path: ../../shared/domain
   flutter:
     sdk: flutter
-  network:
-    path: ../../shared/network
 
 
 dev_dependencies:

@@ -7,14 +7,14 @@ environment:
   sdk: ^3.7.2
 
 dependencies:
+  data:
+    path: ../data
   dependencies:
     path: ../dependencies
   domain:
     path: ../domain
   flutter:
     sdk: flutter
-  network:
-    path: ../network
 
 dev_dependencies:
   flutter_lints: ^5.0.0
