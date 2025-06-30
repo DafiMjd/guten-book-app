@@ -10,24 +10,22 @@ environment:
 dependencies:
   component:
     path: ../../shared/component
-  domain:
-    path: ../../shared/domain
+  cupertino_icons: ^1.0.8
   dependencies:
     path: ../../shared/dependencies
+  domain:
+    path: ../../shared/domain
+  flutter:
+    sdk: flutter
   network:
     path: ../../shared/network
 
-  flutter:
-    sdk: flutter
-
-  cupertino_icons: ^1.0.8
 
 dev_dependencies:
+  flutter_flavorizr: ^2.4.1
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
-  flutter_flavorizr: ^2.4.1
-
-  flutter_lints: ^5.0.0
 
 flavorizr:
   flavors:
