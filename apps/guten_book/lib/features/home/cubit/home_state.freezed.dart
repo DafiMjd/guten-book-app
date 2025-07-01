@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$HomeState {
 
- ViewData<void> get booksLoadState; List<BookEntityGrid> get booksGrid; List<BookEntity> get books; ParamListBookEntity get params; bool get isAllLoaded;
+ ViewData<void> get booksLoadState; List<BookEntityGrid> get booksGrid; List<BookEntity> get books; ParamListBookEntity get params; bool get isAllLoaded; SortEnum get sort;
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -26,16 +26,16 @@ $HomeStateCopyWith<HomeState> get copyWith => _$HomeStateCopyWithImpl<HomeState>
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeState&&(identical(other.booksLoadState, booksLoadState) || other.booksLoadState == booksLoadState)&&const DeepCollectionEquality().equals(other.booksGrid, booksGrid)&&const DeepCollectionEquality().equals(other.books, books)&&(identical(other.params, params) || other.params == params)&&(identical(other.isAllLoaded, isAllLoaded) || other.isAllLoaded == isAllLoaded));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HomeState&&(identical(other.booksLoadState, booksLoadState) || other.booksLoadState == booksLoadState)&&const DeepCollectionEquality().equals(other.booksGrid, booksGrid)&&const DeepCollectionEquality().equals(other.books, books)&&(identical(other.params, params) || other.params == params)&&(identical(other.isAllLoaded, isAllLoaded) || other.isAllLoaded == isAllLoaded)&&(identical(other.sort, sort) || other.sort == sort));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,booksLoadState,const DeepCollectionEquality().hash(booksGrid),const DeepCollectionEquality().hash(books),params,isAllLoaded);
+int get hashCode => Object.hash(runtimeType,booksLoadState,const DeepCollectionEquality().hash(booksGrid),const DeepCollectionEquality().hash(books),params,isAllLoaded,sort);
 
 @override
 String toString() {
-  return 'HomeState(booksLoadState: $booksLoadState, booksGrid: $booksGrid, books: $books, params: $params, isAllLoaded: $isAllLoaded)';
+  return 'HomeState(booksLoadState: $booksLoadState, booksGrid: $booksGrid, books: $books, params: $params, isAllLoaded: $isAllLoaded, sort: $sort)';
 }
 
 
@@ -46,7 +46,7 @@ abstract mixin class $HomeStateCopyWith<$Res>  {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) _then) = _$HomeStateCopyWithImpl;
 @useResult
 $Res call({
- ViewData<void> booksLoadState, List<BookEntityGrid> booksGrid, List<BookEntity> books, ParamListBookEntity params, bool isAllLoaded
+ ViewData<void> booksLoadState, List<BookEntityGrid> booksGrid, List<BookEntity> books, ParamListBookEntity params, bool isAllLoaded, SortEnum sort
 });
 
 
@@ -63,14 +63,15 @@ class _$HomeStateCopyWithImpl<$Res>
 
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? booksLoadState = null,Object? booksGrid = null,Object? books = null,Object? params = null,Object? isAllLoaded = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? booksLoadState = null,Object? booksGrid = null,Object? books = null,Object? params = null,Object? isAllLoaded = null,Object? sort = null,}) {
   return _then(_self.copyWith(
 booksLoadState: null == booksLoadState ? _self.booksLoadState : booksLoadState // ignore: cast_nullable_to_non_nullable
 as ViewData<void>,booksGrid: null == booksGrid ? _self.booksGrid : booksGrid // ignore: cast_nullable_to_non_nullable
 as List<BookEntityGrid>,books: null == books ? _self.books : books // ignore: cast_nullable_to_non_nullable
 as List<BookEntity>,params: null == params ? _self.params : params // ignore: cast_nullable_to_non_nullable
 as ParamListBookEntity,isAllLoaded: null == isAllLoaded ? _self.isAllLoaded : isAllLoaded // ignore: cast_nullable_to_non_nullable
-as bool,
+as bool,sort: null == sort ? _self.sort : sort // ignore: cast_nullable_to_non_nullable
+as SortEnum,
   ));
 }
 /// Create a copy of HomeState
@@ -99,7 +100,7 @@ $ParamListBookEntityCopyWith<$Res> get params {
 
 
 class _HomeState implements HomeState {
-  const _HomeState({required this.booksLoadState, required final  List<BookEntityGrid> booksGrid, required final  List<BookEntity> books, required this.params, required this.isAllLoaded}): _booksGrid = booksGrid,_books = books;
+  const _HomeState({required this.booksLoadState, required final  List<BookEntityGrid> booksGrid, required final  List<BookEntity> books, required this.params, required this.isAllLoaded, required this.sort}): _booksGrid = booksGrid,_books = books;
   
 
 @override final  ViewData<void> booksLoadState;
@@ -119,6 +120,7 @@ class _HomeState implements HomeState {
 
 @override final  ParamListBookEntity params;
 @override final  bool isAllLoaded;
+@override final  SortEnum sort;
 
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
@@ -130,16 +132,16 @@ _$HomeStateCopyWith<_HomeState> get copyWith => __$HomeStateCopyWithImpl<_HomeSt
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HomeState&&(identical(other.booksLoadState, booksLoadState) || other.booksLoadState == booksLoadState)&&const DeepCollectionEquality().equals(other._booksGrid, _booksGrid)&&const DeepCollectionEquality().equals(other._books, _books)&&(identical(other.params, params) || other.params == params)&&(identical(other.isAllLoaded, isAllLoaded) || other.isAllLoaded == isAllLoaded));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HomeState&&(identical(other.booksLoadState, booksLoadState) || other.booksLoadState == booksLoadState)&&const DeepCollectionEquality().equals(other._booksGrid, _booksGrid)&&const DeepCollectionEquality().equals(other._books, _books)&&(identical(other.params, params) || other.params == params)&&(identical(other.isAllLoaded, isAllLoaded) || other.isAllLoaded == isAllLoaded)&&(identical(other.sort, sort) || other.sort == sort));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,booksLoadState,const DeepCollectionEquality().hash(_booksGrid),const DeepCollectionEquality().hash(_books),params,isAllLoaded);
+int get hashCode => Object.hash(runtimeType,booksLoadState,const DeepCollectionEquality().hash(_booksGrid),const DeepCollectionEquality().hash(_books),params,isAllLoaded,sort);
 
 @override
 String toString() {
-  return 'HomeState(booksLoadState: $booksLoadState, booksGrid: $booksGrid, books: $books, params: $params, isAllLoaded: $isAllLoaded)';
+  return 'HomeState(booksLoadState: $booksLoadState, booksGrid: $booksGrid, books: $books, params: $params, isAllLoaded: $isAllLoaded, sort: $sort)';
 }
 
 
@@ -150,7 +152,7 @@ abstract mixin class _$HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Re
   factory _$HomeStateCopyWith(_HomeState value, $Res Function(_HomeState) _then) = __$HomeStateCopyWithImpl;
 @override @useResult
 $Res call({
- ViewData<void> booksLoadState, List<BookEntityGrid> booksGrid, List<BookEntity> books, ParamListBookEntity params, bool isAllLoaded
+ ViewData<void> booksLoadState, List<BookEntityGrid> booksGrid, List<BookEntity> books, ParamListBookEntity params, bool isAllLoaded, SortEnum sort
 });
 
 
@@ -167,14 +169,15 @@ class __$HomeStateCopyWithImpl<$Res>
 
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? booksLoadState = null,Object? booksGrid = null,Object? books = null,Object? params = null,Object? isAllLoaded = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? booksLoadState = null,Object? booksGrid = null,Object? books = null,Object? params = null,Object? isAllLoaded = null,Object? sort = null,}) {
   return _then(_HomeState(
 booksLoadState: null == booksLoadState ? _self.booksLoadState : booksLoadState // ignore: cast_nullable_to_non_nullable
 as ViewData<void>,booksGrid: null == booksGrid ? _self._booksGrid : booksGrid // ignore: cast_nullable_to_non_nullable
 as List<BookEntityGrid>,books: null == books ? _self._books : books // ignore: cast_nullable_to_non_nullable
 as List<BookEntity>,params: null == params ? _self.params : params // ignore: cast_nullable_to_non_nullable
 as ParamListBookEntity,isAllLoaded: null == isAllLoaded ? _self.isAllLoaded : isAllLoaded // ignore: cast_nullable_to_non_nullable
-as bool,
+as bool,sort: null == sort ? _self.sort : sort // ignore: cast_nullable_to_non_nullable
+as SortEnum,
   ));
 }
 

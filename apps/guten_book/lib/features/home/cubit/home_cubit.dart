@@ -11,7 +11,7 @@ class HomeCubit extends Cubit<HomeState> {
   final BookUsecase usecase;
 
   void onBuild() {
-    getBooks();
+    // getBooks();
   }
 
   Future<void> refresh() async {
@@ -33,7 +33,9 @@ class HomeCubit extends Cubit<HomeState> {
     }
 
     emit(state.copyWith(booksLoadState: const ViewData.loading()));
-    final response = await usecase.getBooks(state.params);
+    final response = await usecase.getBooks(
+      state.params.copyWith(sort: state.sort.value),
+    );
 
     switch (response) {
       case Success(value: final res):
@@ -67,5 +69,10 @@ class HomeCubit extends Cubit<HomeState> {
       emit(state.copyWith(params: state.params.copyWith(search: query)));
       refresh();
     });
+  }
+
+  void onSortChanged(SortEnum sort) {
+    emit(state.copyWith(sort: sort));
+    refresh();
   }
 }

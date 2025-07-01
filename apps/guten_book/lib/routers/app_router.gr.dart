@@ -15,7 +15,7 @@ import 'package:domain/domain.dart' as _i5;
 import 'package:flutter/material.dart' as _i4;
 import 'package:guten_book/features/book_detail/pages/book_detail_page.dart'
     as _i1;
-import 'package:guten_book/features/home/pages/home_page.dart' as _i2;
+import 'package:guten_book/features/main/pages/main_page.dart' as _i2;
 
 /// generated route for
 /// [_i1.BookDetailPage]
@@ -85,17 +85,17 @@ class BookDetailRouteArgs {
 }
 
 /// generated route for
-/// [_i2.HomePage]
-class HomeRoute extends _i3.PageRouteInfo<void> {
-  const HomeRoute({List<_i3.PageRouteInfo>? children})
-    : super(HomeRoute.name, initialChildren: children);
+/// [_i2.MainPage]
+class MainRoute extends _i3.PageRouteInfo<void> {
+  const MainRoute({List<_i3.PageRouteInfo>? children})
+    : super(MainRoute.name, initialChildren: children);
 
-  static const String name = 'HomeRoute';
+  static const String name = 'MainRoute';
 
   static _i3.PageInfo page = _i3.PageInfo(
     name,
     builder: (data) {
-      return const _i2.HomePage();
+      return const _i2.MainPage();
     },
   );
 }
