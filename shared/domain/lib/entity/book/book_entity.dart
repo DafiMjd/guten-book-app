@@ -51,10 +51,10 @@ class BookEntity with _$BookEntity {
   @JsonKey(defaultValue: false)
   final bool copyright;
   @override
-  @JsonKey(defaultValue: '')
+  @JsonKey(defaultValue: '', name: 'media_type')
   final String mediaType;
   @override
-  @JsonKey(defaultValue: 0)
+  @JsonKey(defaultValue: 0, name: 'download_count')
   final int downloadCount;
   @override
   final FormatsEntity formats;
@@ -90,4 +90,6 @@ class BookEntity with _$BookEntity {
 
     return '$name, and others';
   }
+
+  
 }

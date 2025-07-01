@@ -19,13 +19,23 @@ class BookUsecase {
     }
   }
 
-  List<BookEntityGrid> mapToBookEntityGrid(List<BookEntity> books) {
+  List<BookEntityGrid> mapToBookEntityGrid(
+    List<BookEntity> books, {
+    required int lastLength,
+  }) {
     final gridList = <BookEntityGrid>[];
     for (var i = 0; i < books.length; i += 2) {
       if (i + 1 < books.length) {
-        gridList.add(BookEntityGrid(left: books[i], right: books[i + 1]));
+        gridList.add(
+          BookEntityGrid(
+            left: books[i],
+            leftIndex: i + lastLength,
+            right: books[i + 1],
+            rightIndex: i + 1 + lastLength,
+          ),
+        );
       } else {
-        gridList.add(BookEntityGrid(left: books[i]));
+        gridList.add(BookEntityGrid(left: books[i], leftIndex: i));
       }
     }
     return gridList;

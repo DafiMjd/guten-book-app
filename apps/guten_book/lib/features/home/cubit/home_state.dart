@@ -8,7 +8,8 @@ part 'home_state.freezed.dart';
 sealed class HomeState with _$HomeState {
   const factory HomeState({
     required LoadState<void> booksLoadState,
-    required List<BookEntityGrid> books,
+    required List<BookEntityGrid> booksGrid,
+    required List<BookEntity> books,
     required ParamListBookEntity params,
     required bool isAllLoaded,
   }) = _HomeState;
@@ -16,6 +17,7 @@ sealed class HomeState with _$HomeState {
   factory HomeState.initial() =>
       const HomeState(
         booksLoadState: LoadState.initial(),
+        booksGrid: [],
         books: [],
         params: ParamListBookEntity(page: 1),
         isAllLoaded: false,
