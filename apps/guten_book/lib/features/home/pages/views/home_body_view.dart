@@ -7,8 +7,8 @@ import '../../../../local_dependencies.dart';
 import '../../cubit/index.dart';
 import 'widgets/index.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class HomeBodyView extends StatelessWidget {
+  const HomeBodyView({super.key});
 
   @override
   Widget build(BuildContext context) {

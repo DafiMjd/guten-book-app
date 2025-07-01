@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$HomeState {
 
- LoadState<void> get booksLoadState; List<BookEntityGrid> get booksGrid; List<BookEntity> get books; ParamListBookEntity get params; bool get isAllLoaded;
+ ViewData<void> get booksLoadState; List<BookEntityGrid> get booksGrid; List<BookEntity> get books; ParamListBookEntity get params; bool get isAllLoaded;
 /// Create a copy of HomeState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -46,11 +46,11 @@ abstract mixin class $HomeStateCopyWith<$Res>  {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) _then) = _$HomeStateCopyWithImpl;
 @useResult
 $Res call({
- LoadState<void> booksLoadState, List<BookEntityGrid> booksGrid, List<BookEntity> books, ParamListBookEntity params, bool isAllLoaded
+ ViewData<void> booksLoadState, List<BookEntityGrid> booksGrid, List<BookEntity> books, ParamListBookEntity params, bool isAllLoaded
 });
 
 
-$LoadStateCopyWith<void, $Res> get booksLoadState;$ParamListBookEntityCopyWith<$Res> get params;
+$ViewDataCopyWith<void, $Res> get booksLoadState;$ParamListBookEntityCopyWith<$Res> get params;
 
 }
 /// @nodoc
@@ -66,7 +66,7 @@ class _$HomeStateCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? booksLoadState = null,Object? booksGrid = null,Object? books = null,Object? params = null,Object? isAllLoaded = null,}) {
   return _then(_self.copyWith(
 booksLoadState: null == booksLoadState ? _self.booksLoadState : booksLoadState // ignore: cast_nullable_to_non_nullable
-as LoadState<void>,booksGrid: null == booksGrid ? _self.booksGrid : booksGrid // ignore: cast_nullable_to_non_nullable
+as ViewData<void>,booksGrid: null == booksGrid ? _self.booksGrid : booksGrid // ignore: cast_nullable_to_non_nullable
 as List<BookEntityGrid>,books: null == books ? _self.books : books // ignore: cast_nullable_to_non_nullable
 as List<BookEntity>,params: null == params ? _self.params : params // ignore: cast_nullable_to_non_nullable
 as ParamListBookEntity,isAllLoaded: null == isAllLoaded ? _self.isAllLoaded : isAllLoaded // ignore: cast_nullable_to_non_nullable
@@ -77,9 +77,9 @@ as bool,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$LoadStateCopyWith<void, $Res> get booksLoadState {
+$ViewDataCopyWith<void, $Res> get booksLoadState {
   
-  return $LoadStateCopyWith<void, $Res>(_self.booksLoadState, (value) {
+  return $ViewDataCopyWith<void, $Res>(_self.booksLoadState, (value) {
     return _then(_self.copyWith(booksLoadState: value));
   });
 }/// Create a copy of HomeState
@@ -102,7 +102,7 @@ class _HomeState implements HomeState {
   const _HomeState({required this.booksLoadState, required final  List<BookEntityGrid> booksGrid, required final  List<BookEntity> books, required this.params, required this.isAllLoaded}): _booksGrid = booksGrid,_books = books;
   
 
-@override final  LoadState<void> booksLoadState;
+@override final  ViewData<void> booksLoadState;
  final  List<BookEntityGrid> _booksGrid;
 @override List<BookEntityGrid> get booksGrid {
   if (_booksGrid is EqualUnmodifiableListView) return _booksGrid;
@@ -150,11 +150,11 @@ abstract mixin class _$HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Re
   factory _$HomeStateCopyWith(_HomeState value, $Res Function(_HomeState) _then) = __$HomeStateCopyWithImpl;
 @override @useResult
 $Res call({
- LoadState<void> booksLoadState, List<BookEntityGrid> booksGrid, List<BookEntity> books, ParamListBookEntity params, bool isAllLoaded
+ ViewData<void> booksLoadState, List<BookEntityGrid> booksGrid, List<BookEntity> books, ParamListBookEntity params, bool isAllLoaded
 });
 
 
-@override $LoadStateCopyWith<void, $Res> get booksLoadState;@override $ParamListBookEntityCopyWith<$Res> get params;
+@override $ViewDataCopyWith<void, $Res> get booksLoadState;@override $ParamListBookEntityCopyWith<$Res> get params;
 
 }
 /// @nodoc
@@ -170,7 +170,7 @@ class __$HomeStateCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? booksLoadState = null,Object? booksGrid = null,Object? books = null,Object? params = null,Object? isAllLoaded = null,}) {
   return _then(_HomeState(
 booksLoadState: null == booksLoadState ? _self.booksLoadState : booksLoadState // ignore: cast_nullable_to_non_nullable
-as LoadState<void>,booksGrid: null == booksGrid ? _self._booksGrid : booksGrid // ignore: cast_nullable_to_non_nullable
+as ViewData<void>,booksGrid: null == booksGrid ? _self._booksGrid : booksGrid // ignore: cast_nullable_to_non_nullable
 as List<BookEntityGrid>,books: null == books ? _self._books : books // ignore: cast_nullable_to_non_nullable
 as List<BookEntity>,params: null == params ? _self.params : params // ignore: cast_nullable_to_non_nullable
 as ParamListBookEntity,isAllLoaded: null == isAllLoaded ? _self.isAllLoaded : isAllLoaded // ignore: cast_nullable_to_non_nullable
@@ -182,9 +182,9 @@ as bool,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$LoadStateCopyWith<void, $Res> get booksLoadState {
+$ViewDataCopyWith<void, $Res> get booksLoadState {
   
-  return $LoadStateCopyWith<void, $Res>(_self.booksLoadState, (value) {
+  return $ViewDataCopyWith<void, $Res>(_self.booksLoadState, (value) {
     return _then(_self.copyWith(booksLoadState: value));
   });
 }/// Create a copy of HomeState

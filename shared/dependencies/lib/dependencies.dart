@@ -1,5 +1,6 @@
 export 'package:alice_lightweight/alice.dart';
 export 'package:auto_size_text_plus/auto_size_text_plus.dart';
+export 'package:easy_debounce/easy_debounce.dart';
 export 'package:exprollable_page_view/exprollable_page_view.dart';
 export 'package:extended_image/extended_image.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
