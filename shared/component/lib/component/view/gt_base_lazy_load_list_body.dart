@@ -10,7 +10,6 @@ class GtBaseLazyLoadListBody<T> extends StatelessWidget {
     super.key,
     required this.loadState,
     required this.datas,
-    required this.loadingSkeletonWidget,
     this.padding,
     this.onRefresh,
     required this.itemBuilder,
@@ -22,7 +21,6 @@ class GtBaseLazyLoadListBody<T> extends StatelessWidget {
 
   final LoadState<void> loadState;
   final List<T> datas;
-  final Widget loadingSkeletonWidget;
   final EdgeInsets? padding;
   final RefreshCallback? onRefresh;
   final Widget Function(int, T) itemBuilder;

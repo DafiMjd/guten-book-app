@@ -17,6 +17,7 @@ class HomeCubit extends Cubit<HomeState> {
     emit(
       state.copyWith(
         booksLoadState: const LoadState.initial(),
+        booksGrid: [],
         books: [],
         isAllLoaded: false,
         params: const ParamListBookEntity(page: 1),
@@ -35,13 +36,18 @@ class HomeCubit extends Cubit<HomeState> {
 
     switch (response) {
       case Success(value: final res):
-        final books = [
-          ...state.books,
-          ...usecase.mapToBookEntityGrid(res.results),
+        final booksGrid = [
+          ...state.booksGrid,
+          ...usecase.mapToBookEntityGrid(
+            res.results,
+            lastLength: state.books.length,
+          ),
         ];
+        final books = [...state.books, ...res.results];
 
         emit(
           state.copyWith(
+            booksGrid: booksGrid,
             books: books,
             booksLoadState: const LoadState.loaded(data: null),
             isAllLoaded: res.next == null,

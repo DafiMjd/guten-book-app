@@ -34,8 +34,8 @@ BookEntity _$BookEntityFromJson(Map<String, dynamic> json) => BookEntity(
       (json['languages'] as List<dynamic>?)?.map((e) => e as String).toList() ??
       [],
   copyright: json['copyright'] as bool? ?? false,
-  mediaType: json['mediaType'] as String? ?? '',
-  downloadCount: (json['downloadCount'] as num?)?.toInt() ?? 0,
+  mediaType: json['media_type'] as String? ?? '',
+  downloadCount: (json['download_count'] as num?)?.toInt() ?? 0,
   formats: FormatsEntity.fromJson(json['formats'] as Map<String, dynamic>),
 );
 
@@ -50,7 +50,7 @@ Map<String, dynamic> _$BookEntityToJson(BookEntity instance) =>
       'bookshelves': instance.bookshelves,
       'languages': instance.languages,
       'copyright': instance.copyright,
-      'mediaType': instance.mediaType,
-      'downloadCount': instance.downloadCount,
+      'media_type': instance.mediaType,
+      'download_count': instance.downloadCount,
       'formats': instance.formats,
     };

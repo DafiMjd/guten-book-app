@@ -14,6 +14,9 @@ class $AssetBookGen {
 
   /// Directory path: asset/book/img
   $AssetBookImgGen get img => const $AssetBookImgGen();
+
+  /// Directory path: asset/book/svg
+  $AssetBookSvgGen get svg => const $AssetBookSvgGen();
 }
 
 class $AssetBookImgGen {
@@ -25,6 +28,22 @@ class $AssetBookImgGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [dummyBook];
+}
+
+class $AssetBookSvgGen {
+  const $AssetBookSvgGen();
+
+  /// File path: asset/book/svg/ic_copyright.svg
+  String get icCopyright => 'asset/book/svg/ic_copyright.svg';
+
+  /// File path: asset/book/svg/ic_heart_active.svg
+  String get icHeartActive => 'asset/book/svg/ic_heart_active.svg';
+
+  /// File path: asset/book/svg/ic_heart_inactive.svg
+  String get icHeartInactive => 'asset/book/svg/ic_heart_inactive.svg';
+
+  /// List of all assets
+  List<String> get values => [icCopyright, icHeartActive, icHeartInactive];
 }
 
 class Assets {

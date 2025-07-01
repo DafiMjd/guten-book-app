@@ -14,6 +14,7 @@ class GtExtendedImageNetwork extends StatelessWidget {
     this.height,
     this.width,
     this.errorWidget,
+    this.clearMemoryCacheWhenDispose = false,
   });
 
   final String imgUrl;
@@ -26,6 +27,7 @@ class GtExtendedImageNetwork extends StatelessWidget {
   final double? compressionRatio;
   final Widget? errorWidget;
   final FilterQuality? filterQuality;
+  final bool clearMemoryCacheWhenDispose;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +41,12 @@ class GtExtendedImageNetwork extends StatelessWidget {
 
     return ExtendedImage.network(
       imgUrl,
+      timeLimit: const Duration(seconds: 3),
+      retries: 0,
       height: height,
       width: width,
       fit: fit ?? BoxFit.cover,
+      clearMemoryCacheWhenDispose: clearMemoryCacheWhenDispose,
       compressionRatio: compressionRatio ?? 0.1,
       maxBytes: 20,
       cacheHeight: height?.toInt(),
