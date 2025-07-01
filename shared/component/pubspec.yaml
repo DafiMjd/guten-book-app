@@ -30,6 +30,7 @@ flutter_gen:
 flutter:
   assets:
     - asset/book/img/
+    - asset/book/svg/
   fonts:
     - family: Inter
       fonts:

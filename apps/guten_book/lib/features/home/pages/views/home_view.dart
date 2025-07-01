@@ -1,9 +1,9 @@
 import 'package:component/component.dart';
 import 'package:dependencies/dependencies.dart';
-import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../local_dependencies.dart';
 import '../../cubit/index.dart';
 import 'widgets/index.dart';
 
@@ -13,22 +13,15 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<HomeCubit>();
-    final emptyBook = BookEntity.empty().copyWith(
-      title: 'Loading...',
-      authors: const [AuthorEntity(name: 'Loading...')],
-    );
 
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         return GtBaseLazyLoadListBody(
-          padding: const EdgeInsets.symmetric(horizontal: 24).w,
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 24).w,
           loadState: state.booksLoadState,
-          datas: state.books,
-          loadingSkeletonWidget: BookGridWidget(
-            bookGrid: BookEntityGrid(left: emptyBook, right: emptyBook),
-          ),
+          datas: state.booksGrid,
           itemBuilder: (index, data) {
-            return BookGridWidget(bookGrid: data);
+            return BookGridWidget(books: state.books, bookGrid: data);
           },
           separatorBuilder: (context, index) => Gap(24.w),
           onRefresh: cubit.refresh,

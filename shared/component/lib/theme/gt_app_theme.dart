@@ -52,6 +52,21 @@ class GtAppTheme {
       fontWeight: FontWeight.w700,
       color: Colors.white,
     ),
+    headlineLarge: TextStyle(
+      fontSize: 26.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.white,
+    ),
+    headlineMedium: TextStyle(
+      fontSize: 24.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.white,
+    ),
+    headlineSmall: TextStyle(
+      fontSize: 22.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.white,
+    ),
   );
 
   static ThemeData dark() {
