@@ -10,6 +10,7 @@ ParamListBookEntity _$ParamListBookEntityFromJson(Map<String, dynamic> json) =>
     ParamListBookEntity(
       page: (json['page'] as num).toInt(),
       search: json['search'] as String?,
+      sort: json['sort'] as String?,
     );
 
 Map<String, dynamic> _$ParamListBookEntityToJson(
@@ -17,4 +18,5 @@ Map<String, dynamic> _$ParamListBookEntityToJson(
 ) => <String, dynamic>{
   'page': instance.page,
   if (instance.search case final value?) 'search': value,
+  if (instance.sort case final value?) 'sort': value,
 };

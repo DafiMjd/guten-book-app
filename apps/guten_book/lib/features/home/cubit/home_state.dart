@@ -12,6 +12,7 @@ sealed class HomeState with _$HomeState {
     required List<BookEntity> books,
     required ParamListBookEntity params,
     required bool isAllLoaded,
+    required SortEnum sort,
   }) = _HomeState;
 
   factory HomeState.initial() =>
@@ -21,5 +22,6 @@ sealed class HomeState with _$HomeState {
         books: [],
         params: ParamListBookEntity(page: 1),
         isAllLoaded: false,
+        sort: SortEnum.popular,
       );
 }

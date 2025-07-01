@@ -5,7 +5,6 @@ import '../../../local_dependencies.dart';
 import '../cubit/home_cubit.dart';
 import 'views/index.dart';
 
-@RoutePage()
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -32,20 +31,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return BlocProvider.value(
       value: cubit,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Guten Book',
-            style: Theme.of(context).textTheme.labelLarge,
-          ),
-        ),
-        body: Column(
-          children: [
-            const HomeHeaderView(),
-            Gap(16.w),
-            const Expanded(child: HomeBodyView()),
-          ],
-        ),
+      child: Column(
+        children: [
+          const HomeHeaderView(),
+          Gap(16.w),
+          const Expanded(child: HomeBodyView()),
+        ],
       ),
     );
   }
