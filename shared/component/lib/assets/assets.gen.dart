@@ -42,8 +42,20 @@ class $AssetBookSvgGen {
   /// File path: asset/book/svg/ic_heart_inactive.svg
   String get icHeartInactive => 'asset/book/svg/ic_heart_inactive.svg';
 
+  /// File path: asset/book/svg/ic_home_active.svg
+  String get icHomeActive => 'asset/book/svg/ic_home_active.svg';
+
+  /// File path: asset/book/svg/ic_home_inactive.svg
+  String get icHomeInactive => 'asset/book/svg/ic_home_inactive.svg';
+
   /// List of all assets
-  List<String> get values => [icCopyright, icHeartActive, icHeartInactive];
+  List<String> get values => [
+    icCopyright,
+    icHeartActive,
+    icHeartInactive,
+    icHomeActive,
+    icHomeInactive,
+  ];
 }
 
 class Assets {

@@ -9,12 +9,15 @@ class ParamListBookEntity with _$ParamListBookEntity {
   const ParamListBookEntity({
     required this.page,
     this.search,
+    this.sort,
   });
 
   @override
   final int page;
   @override
   final String? search;
+  @override
+  final String? sort;
 
   factory ParamListBookEntity.fromJson(Map<String, Object?> json) =>
       _$ParamListBookEntityFromJson(json);
