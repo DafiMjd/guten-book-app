@@ -8,13 +8,13 @@ part of 'author_entity.dart';
 
 AuthorEntity _$AuthorEntityFromJson(Map<String, dynamic> json) => AuthorEntity(
   name: json['name'] as String? ?? '',
-  birthYear: (json['birthYear'] as num?)?.toInt() ?? 0,
-  deathYear: (json['deathYear'] as num?)?.toInt() ?? 0,
+  birthYear: (json['birth_year'] as num?)?.toInt(),
+  deathYear: (json['death_year'] as num?)?.toInt(),
 );
 
 Map<String, dynamic> _$AuthorEntityToJson(AuthorEntity instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'birthYear': instance.birthYear,
-      'deathYear': instance.deathYear,
+      'birth_year': instance.birthYear,
+      'death_year': instance.deathYear,
     };
