@@ -1,8 +1,9 @@
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 
 import '../../../local_dependencies.dart';
 import '../cubit/home_cubit.dart';
-import 'views/home_view.dart';
+import 'views/index.dart';
 
 @RoutePage()
 class HomePage extends StatefulWidget {
@@ -38,7 +39,13 @@ class _HomePageState extends State<HomePage> {
             style: Theme.of(context).textTheme.labelLarge,
           ),
         ),
-        body: const HomeView(),
+        body: Column(
+          children: [
+            const HomeHeaderView(),
+            Gap(16.w),
+            const Expanded(child: HomeBodyView()),
+          ],
+        ),
       ),
     );
   }

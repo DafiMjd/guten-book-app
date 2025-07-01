@@ -1,4 +1,5 @@
 import 'package:data/data.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:domain/domain.dart';
 import '../../../local_dependencies.dart';
 
@@ -16,11 +17,11 @@ class HomeCubit extends Cubit<HomeState> {
   Future<void> refresh() async {
     emit(
       state.copyWith(
-        booksLoadState: const LoadState.initial(),
+        booksLoadState: const ViewData.initial(),
         booksGrid: [],
         books: [],
         isAllLoaded: false,
-        params: const ParamListBookEntity(page: 1),
+        params: state.params.copyWith(page: 1),
       ),
     );
     await getBooks();
@@ -31,7 +32,7 @@ class HomeCubit extends Cubit<HomeState> {
       return;
     }
 
-    emit(state.copyWith(booksLoadState: const LoadState.loading()));
+    emit(state.copyWith(booksLoadState: const ViewData.loading()));
     final response = await usecase.getBooks(state.params);
 
     switch (response) {
@@ -49,15 +50,22 @@ class HomeCubit extends Cubit<HomeState> {
           state.copyWith(
             booksGrid: booksGrid,
             books: books,
-            booksLoadState: const LoadState.loaded(data: null),
+            booksLoadState: const ViewData.loaded(data: null),
             isAllLoaded: res.next == null,
             params: state.params.nextPage,
           ),
         );
       case Failure(exception: final exception):
         emit(
-          state.copyWith(booksLoadState: LoadState.error(exception: exception)),
+          state.copyWith(booksLoadState: ViewData.error(exception: exception)),
         );
     }
+  }
+
+  void searchBooks(String query) {
+    EasyDebounce.debounce('searchBooks', const Duration(milliseconds: 500), () {
+      emit(state.copyWith(params: state.params.copyWith(search: query)));
+      refresh();
+    });
   }
 }
