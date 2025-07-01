@@ -2,16 +2,16 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'index.dart';
 
-part 'load_state.freezed.dart';
+part 'view_data.freezed.dart';
 
 @freezed
-class LoadState<T> with _$LoadState<T> {
-  const LoadState._();
+class ViewData<T> with _$ViewData<T> {
+  const ViewData._();
 
-  const factory LoadState.initial() = Initial<T>;
-  const factory LoadState.error({required BaseException exception}) = Errror<T>;
-  const factory LoadState.loading() = Loading<T>;
-  const factory LoadState.loaded({required T data}) = Loaded<T>;
+  const factory ViewData.initial() = Initial<T>;
+  const factory ViewData.error({required BaseException exception}) = Errror<T>;
+  const factory ViewData.loading() = Loading<T>;
+  const factory ViewData.loaded({required T data}) = Loaded<T>;
 
   bool get isInitial => this is Initial<T>;
   bool get isError => this is Errror<T>;

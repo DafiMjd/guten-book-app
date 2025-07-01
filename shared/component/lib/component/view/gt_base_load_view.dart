@@ -11,7 +11,7 @@ class GtBaseLoadView<T> extends StatelessWidget {
     required this.loadedBuilder,
   });
 
-  final LoadState<T> loadState;
+  final ViewData<T> loadState;
   final Widget Function()? initialBuilder;
   final Widget Function() loadingBuilder;
   final Widget Function(BaseException) errorBuilder;
