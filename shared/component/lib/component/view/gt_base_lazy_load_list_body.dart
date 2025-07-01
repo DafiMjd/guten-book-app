@@ -1,4 +1,4 @@
-import 'package:dependencies/dependencies.dart' as dep;
+import 'package:dependencies/dependencies.dart';
 import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +19,7 @@ class GtBaseLazyLoadListBody<T> extends StatelessWidget {
     this.emptyWidget,
   });
 
-  final LoadState<void> loadState;
+  final ViewData<void> loadState;
   final List<T> datas;
   final EdgeInsets? padding;
   final RefreshCallback? onRefresh;
@@ -43,7 +43,7 @@ class GtBaseLazyLoadListBody<T> extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const CircularProgressIndicator(),
-            dep.Gap(16.w),
+            Gap(16.w),
             Text('Loading', style: GtAppTheme.textTheme.bodyMedium),
           ],
         ),
@@ -56,7 +56,7 @@ class GtBaseLazyLoadListBody<T> extends StatelessWidget {
       return RefreshIndicator(
         onRefresh: onRefresh ?? () async {},
         notificationPredicate: onRefresh != null ? (_) => true : (_) => false,
-        child: dep.InfiniteList(
+        child: InfiniteList(
           padding: padding,
           itemCount: datas.length,
           isLoading: isLazyLoadLoading,

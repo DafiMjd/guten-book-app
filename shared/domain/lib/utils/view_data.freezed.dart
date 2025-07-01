@@ -4,7 +4,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'load_state.dart';
+part of 'view_data.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,7 +13,7 @@ part of 'load_state.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$LoadState<T> {
+mixin _$ViewData<T> {
 
 
 
@@ -21,7 +21,7 @@ mixin _$LoadState<T> {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoadState<T>);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ViewData<T>);
 }
 
 
@@ -30,22 +30,22 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'LoadState<$T>()';
+  return 'ViewData<$T>()';
 }
 
 
 }
 
 /// @nodoc
-class $LoadStateCopyWith<T,$Res>  {
-$LoadStateCopyWith(LoadState<T> _, $Res Function(LoadState<T>) __);
+class $ViewDataCopyWith<T,$Res>  {
+$ViewDataCopyWith(ViewData<T> _, $Res Function(ViewData<T>) __);
 }
 
 
 /// @nodoc
 
 
-class Initial<T> extends LoadState<T> {
+class Initial<T> extends ViewData<T> {
   const Initial(): super._();
   
 
@@ -65,7 +65,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'LoadState<$T>.initial()';
+  return 'ViewData<$T>.initial()';
 }
 
 
@@ -77,13 +77,13 @@ String toString() {
 /// @nodoc
 
 
-class Errror<T> extends LoadState<T> {
+class Errror<T> extends ViewData<T> {
   const Errror({required this.exception}): super._();
   
 
  final  BaseException exception;
 
-/// Create a copy of LoadState
+/// Create a copy of ViewData
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -102,14 +102,14 @@ int get hashCode => Object.hash(runtimeType,exception);
 
 @override
 String toString() {
-  return 'LoadState<$T>.error(exception: $exception)';
+  return 'ViewData<$T>.error(exception: $exception)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $ErrrorCopyWith<T,$Res> implements $LoadStateCopyWith<T, $Res> {
+abstract mixin class $ErrrorCopyWith<T,$Res> implements $ViewDataCopyWith<T, $Res> {
   factory $ErrrorCopyWith(Errror<T> value, $Res Function(Errror<T>) _then) = _$ErrrorCopyWithImpl;
 @useResult
 $Res call({
@@ -128,7 +128,7 @@ class _$ErrrorCopyWithImpl<T,$Res>
   final Errror<T> _self;
   final $Res Function(Errror<T>) _then;
 
-/// Create a copy of LoadState
+/// Create a copy of ViewData
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? exception = null,}) {
   return _then(Errror<T>(
@@ -143,7 +143,7 @@ as BaseException,
 /// @nodoc
 
 
-class Loading<T> extends LoadState<T> {
+class Loading<T> extends ViewData<T> {
   const Loading(): super._();
   
 
@@ -163,7 +163,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'LoadState<$T>.loading()';
+  return 'ViewData<$T>.loading()';
 }
 
 
@@ -175,13 +175,13 @@ String toString() {
 /// @nodoc
 
 
-class Loaded<T> extends LoadState<T> {
+class Loaded<T> extends ViewData<T> {
   const Loaded({required this.data}): super._();
   
 
  final  T data;
 
-/// Create a copy of LoadState
+/// Create a copy of ViewData
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -200,14 +200,14 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'LoadState<$T>.loaded(data: $data)';
+  return 'ViewData<$T>.loaded(data: $data)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $LoadedCopyWith<T,$Res> implements $LoadStateCopyWith<T, $Res> {
+abstract mixin class $LoadedCopyWith<T,$Res> implements $ViewDataCopyWith<T, $Res> {
   factory $LoadedCopyWith(Loaded<T> value, $Res Function(Loaded<T>) _then) = _$LoadedCopyWithImpl;
 @useResult
 $Res call({
@@ -226,7 +226,7 @@ class _$LoadedCopyWithImpl<T,$Res>
   final Loaded<T> _self;
   final $Res Function(Loaded<T>) _then;
 
-/// Create a copy of LoadState
+/// Create a copy of ViewData
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? data = freezed,}) {
   return _then(Loaded<T>(
