@@ -1,5 +1,4 @@
-import 'package:component/component/view/index.dart';
-import 'package:component/component/widget/index.dart';
+import 'package:component/component.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';

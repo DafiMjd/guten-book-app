@@ -2,6 +2,7 @@ import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 
 import '../../../home/pages/home_page.dart';
+import '../../../liked_book/pages/liked_book_page.dart';
 
 class MainBodyView extends StatelessWidget {
   const MainBodyView({super.key, required this.selectedIndexNotifier});
@@ -15,10 +16,7 @@ class MainBodyView extends StatelessWidget {
       builder: (context, selectedIndex, _) {
         return LazyLoadIndexedStack(
           index: selectedIndex,
-          children: const [
-            HomePage(),
-            Placeholder(),
-          ],
+          children: const [HomePage(), LikedBookPage()],
         );
       },
     );

@@ -1,4 +1,3 @@
-
 import 'package:domain/domain.dart';
 import '../../../local_dependencies.dart';
 
@@ -15,13 +14,12 @@ sealed class HomeState with _$HomeState {
     required SortEnum sort,
   }) = _HomeState;
 
-  factory HomeState.initial() =>
-      const HomeState(
-        booksLoadState: ViewData.initial(),
-        booksGrid: [],
-        books: [],
-        params: ParamListBookEntity(page: 1),
-        isAllLoaded: false,
-        sort: SortEnum.popular,
-      );
+  factory HomeState.initial() => const HomeState(
+    booksLoadState: ViewData.initial(),
+    booksGrid: [],
+    books: [],
+    params: ParamListBookEntity(page: 1),
+    isAllLoaded: false,
+    sort: SortEnum.popular,
+  );
 }

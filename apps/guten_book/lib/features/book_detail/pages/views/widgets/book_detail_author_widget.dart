@@ -43,21 +43,7 @@ class BookDetailAuthorWidget extends StatelessWidget {
           ),
         ),
         Gap(16.w),
-        GestureDetector(
-          onTap: enabled ? onSaveTapped : null,
-          child: SvgPicture.asset(
-            isSaved
-                ? Assets.book.svg.icHeartActive
-                : Assets.book.svg.icHeartInactive,
-            width: 32.w,
-            height: 32.w,
-            colorFilter: ColorFilter.mode(
-              GtAppTheme.secondary.withValues(alpha: enabled ? 1 : 0.1),
-              BlendMode.srcIn,
-            ),
-            package: 'component',
-          ),
-        ),
+        GtSaveButton(isSaved: isSaved, onTap: onSaveTapped, enabled: enabled),
       ],
     );
   }

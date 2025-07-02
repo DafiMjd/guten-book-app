@@ -17,7 +17,6 @@ class GtBaseLoadView<T> extends StatelessWidget {
   final Widget Function(BaseException) errorBuilder;
   final Widget Function(T) loadedBuilder;
 
-
   @override
   Widget build(BuildContext context) {
     return switch (loadState) {

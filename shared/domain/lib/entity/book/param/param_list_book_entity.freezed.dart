@@ -12,11 +12,10 @@ part of 'param_list_book_entity.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
-
 /// @nodoc
 mixin _$ParamListBookEntity {
 
- int get page; String? get search; String? get sort;
+ int get page; String? get search; String? get sort; List<int>? get ids;
 /// Create a copy of ParamListBookEntity
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -27,16 +26,16 @@ $ParamListBookEntityCopyWith<ParamListBookEntity> get copyWith => _$ParamListBoo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ParamListBookEntity&&(identical(other.page, page) || other.page == page)&&(identical(other.search, search) || other.search == search)&&(identical(other.sort, sort) || other.sort == sort));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ParamListBookEntity&&(identical(other.page, page) || other.page == page)&&(identical(other.search, search) || other.search == search)&&(identical(other.sort, sort) || other.sort == sort)&&const DeepCollectionEquality().equals(other.ids, ids));
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
+
 @override
-int get hashCode => Object.hash(runtimeType,page,search,sort);
+int get hashCode => Object.hash(runtimeType,page,search,sort,const DeepCollectionEquality().hash(ids));
 
 @override
 String toString() {
-  return 'ParamListBookEntity(page: $page, search: $search, sort: $sort)';
+  return 'ParamListBookEntity(page: $page, search: $search, sort: $sort, ids: $ids)';
 }
 
 
@@ -47,7 +46,7 @@ abstract mixin class $ParamListBookEntityCopyWith<$Res>  {
   factory $ParamListBookEntityCopyWith(ParamListBookEntity value, $Res Function(ParamListBookEntity) _then) = _$ParamListBookEntityCopyWithImpl;
 @useResult
 $Res call({
- int page, String? search, String? sort
+ int page, String? search, String? sort, List<int>? ids
 });
 
 
@@ -64,12 +63,13 @@ class _$ParamListBookEntityCopyWithImpl<$Res>
 
 /// Create a copy of ParamListBookEntity
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? page = null,Object? search = freezed,Object? sort = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? page = null,Object? search = freezed,Object? sort = freezed,Object? ids = freezed,}) {
   return _then(ParamListBookEntity(
 page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
 as int,search: freezed == search ? _self.search : search // ignore: cast_nullable_to_non_nullable
 as String?,sort: freezed == sort ? _self.sort : sort // ignore: cast_nullable_to_non_nullable
-as String?,
+as String?,ids: freezed == ids ? _self.ids : ids // ignore: cast_nullable_to_non_nullable
+as List<int>?,
   ));
 }
 

@@ -60,19 +60,19 @@ class BookEntity with _$BookEntity {
   final FormatsEntity formats;
 
   factory BookEntity.empty() => BookEntity(
-        id: 0,
-        title: '',
-        authors: [],
-        summaries: [],
-        translators: [],
-        subjects: [],
-        bookshelves: [],
-        languages: [],
-        copyright: false,
-        mediaType: '',
-        downloadCount: 0,
-        formats: FormatsEntity.empty(),
-      );
+    id: 0,
+    title: '',
+    authors: [],
+    summaries: [],
+    translators: [],
+    subjects: [],
+    bookshelves: [],
+    languages: [],
+    copyright: false,
+    mediaType: '',
+    downloadCount: 0,
+    formats: FormatsEntity.empty(),
+  );
 
   factory BookEntity.fromJson(Map<String, Object?> json) =>
       _$BookEntityFromJson(json);
@@ -90,6 +90,4 @@ class BookEntity with _$BookEntity {
 
     return '$name, and others';
   }
-
-  
 }
