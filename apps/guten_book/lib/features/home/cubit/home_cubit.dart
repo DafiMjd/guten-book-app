@@ -1,7 +1,6 @@
 import 'package:data/data.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:domain/domain.dart';
-import '../../../local_dependencies.dart';
 
 import 'home_state.dart';
 

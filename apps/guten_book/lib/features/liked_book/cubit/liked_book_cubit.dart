@@ -1,11 +1,10 @@
 import 'package:data/data.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:domain/domain.dart';
-import '../../../local_dependencies.dart';
 
 import 'liked_book_state.dart';
 
-class LikedBookCubit extends Cubit<LikedBookState> {
+class LikedBookCubit extends RefreshableCubit<LikedBookState> {
   LikedBookCubit()
     : bookUsecase = getIt<BookUsecase>(),
       bookDetailUsecase = getIt<BookDetailUsecase>(),
@@ -13,6 +12,14 @@ class LikedBookCubit extends Cubit<LikedBookState> {
 
   final BookUsecase bookUsecase;
   final BookDetailUsecase bookDetailUsecase;
+
+  @override
+  void setup() {
+    initRefresh(
+      refreshKey: RefreshKeys.likedBookList,
+      onRefresh: refresh,
+    );
+  }
 
   Future<void> onBuild() async {
     await getSavedBookIds();
