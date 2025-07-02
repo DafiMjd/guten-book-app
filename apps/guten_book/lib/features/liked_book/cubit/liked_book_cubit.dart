@@ -15,10 +15,7 @@ class LikedBookCubit extends RefreshableCubit<LikedBookState> {
 
   @override
   void setup() {
-    initRefresh(
-      refreshKey: RefreshKeys.likedBookList,
-      onRefresh: refresh,
-    );
+    initRefresh(refreshKey: RefreshKeys.likedBookList, onRefresh: refresh);
   }
 
   Future<void> onBuild() async {

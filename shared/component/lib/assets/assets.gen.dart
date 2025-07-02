@@ -33,6 +33,9 @@ class $AssetBookImgGen {
 class $AssetBookSvgGen {
   const $AssetBookSvgGen();
 
+  /// File path: asset/book/svg/ic_book_open.svg
+  String get icBookOpen => 'asset/book/svg/ic_book_open.svg';
+
   /// File path: asset/book/svg/ic_copyright.svg
   String get icCopyright => 'asset/book/svg/ic_copyright.svg';
 
@@ -50,6 +53,7 @@ class $AssetBookSvgGen {
 
   /// List of all assets
   List<String> get values => [
+    icBookOpen,
     icCopyright,
     icHeartActive,
     icHeartInactive,

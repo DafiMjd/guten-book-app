@@ -5,6 +5,9 @@ get_app:
 get_deps:
 	cd shared/dependencies && fvm flutter pub get && cd ../..
 
+format:
+	melos run format
+
 watch_domain:
 	cd shared/domain && fvm dart run build_runner watch --delete-conflicting-outputs && cd ../..
 build_domain:

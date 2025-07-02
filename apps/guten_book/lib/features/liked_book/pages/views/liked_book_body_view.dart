@@ -42,6 +42,7 @@ class LikedBookBodyView extends StatelessWidget {
           onRefresh: cubit.refresh,
           onFetchData: cubit.getBooks,
           hasReachedMax: state.isAllLoaded,
+          emptyWidget: const GtEmptyState(text: 'No saved books found'),
         );
       },
     );

@@ -17,8 +17,7 @@ abstract class RefreshableCubit<S> extends Cubit<S> {
     required VoidCallback onRefresh,
   }) {
     _refreshSubscription?.cancel();
-    _refreshSubscription = getIt<RefreshManager>()
-        .refreshStream
+    _refreshSubscription = getIt<RefreshManager>().refreshStream
         .where((key) => key == refreshKey)
         .listen((_) => onRefresh());
   }
