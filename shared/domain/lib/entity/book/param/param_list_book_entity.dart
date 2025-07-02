@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'param_list_book_entity.freezed.dart';
-part 'param_list_book_entity.g.dart';
 
 @freezed
 @JsonSerializable(includeIfNull: false)
@@ -10,6 +9,7 @@ class ParamListBookEntity with _$ParamListBookEntity {
     required this.page,
     this.search,
     this.sort,
+    this.ids,
   });
 
   @override
@@ -18,11 +18,15 @@ class ParamListBookEntity with _$ParamListBookEntity {
   final String? search;
   @override
   final String? sort;
+  @override
+  final List<int>? ids;
 
-  factory ParamListBookEntity.fromJson(Map<String, Object?> json) =>
-      _$ParamListBookEntityFromJson(json);
-
-  Map<String, Object?> toJson() => _$ParamListBookEntityToJson(this);
+  Map<String, Object?> toJson() => {
+    'page': page,
+    if (search != null) 'search': search,
+    if (sort != null) 'sort': sort,
+    if (ids != null) 'ids': ids?.join(','),
+  };
 
   ParamListBookEntity get nextPage => copyWith(page: page + 1);
 }

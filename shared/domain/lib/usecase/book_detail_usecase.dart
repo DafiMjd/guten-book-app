@@ -7,10 +7,7 @@ class BookDetailUsecase {
 
   BookDetailUsecase() : prefs = getIt<SharedPreferenceService>();
 
-  Map<int, bool> formBookMap(
-    List<BookEntity> books,
-    List<int> savedBookIds,
-  ) {
+  Map<int, bool> formBookMap(List<BookEntity> books, List<int> savedBookIds) {
     final bookMap = <int, bool>{};
     for (final book in books) {
       bookMap[book.id] = savedBookIds.contains(book.id);

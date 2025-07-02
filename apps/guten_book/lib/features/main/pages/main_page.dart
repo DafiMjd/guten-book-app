@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
       bottomNavigationBar: MainNavbarView(
         selectedIndexNotifier: selectedIndexNotifier,
       ),
-      body: MainBodyView(selectedIndexNotifier: selectedIndexNotifier)
+      body: MainBodyView(selectedIndexNotifier: selectedIndexNotifier),
     );
   }
 }
