@@ -27,7 +27,7 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   Future<void> getBooks() async {
-    if (state.isAllLoaded) {
+    if (state.isAllLoaded || state.booksLoadState.isLoading) {
       return;
     }
 
