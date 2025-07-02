@@ -3,7 +3,6 @@ import 'package:dependencies/dependencies.dart';
 import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../local_dependencies.dart';
 import '../../cubit/index.dart';
 import 'widgets/index.dart';
 

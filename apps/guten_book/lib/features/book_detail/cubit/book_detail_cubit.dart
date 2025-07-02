@@ -1,7 +1,6 @@
 import 'package:data/data.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:domain/domain.dart';
-import '../../../local_dependencies.dart';
 
 import 'book_detail_state.dart';
 
@@ -51,7 +50,10 @@ class BookDetailCubit extends Cubit<BookDetailState> {
       'saveBookId',
       const Duration(milliseconds: 500),
       () async {
-        await _saveBookId(id);
+        final isSaved = state.bookMap[id] ?? false;
+        if (isSaved) {
+          await _saveBookId(id);
+        }
       },
     );
   }
@@ -74,7 +76,10 @@ class BookDetailCubit extends Cubit<BookDetailState> {
       'deleteBookId',
       const Duration(milliseconds: 500),
       () async {
-        await _removeBookId(id);
+        final isSaved = state.bookMap[id] ?? false;
+        if (!isSaved) {
+          await _removeBookId(id);
+        }
       },
     );
   }
@@ -86,10 +91,18 @@ class BookDetailCubit extends Cubit<BookDetailState> {
 
     switch (response) {
       case Success(value: final res):
-        emit(state.copyWith(bookIds: res));
+        emit(
+          state.copyWith(
+            updateBookIdState: const ViewData.loaded(data: null),
+            bookIds: res,
+          ),
+        );
+        getIt<RefreshManager>().triggerRefresh(RefreshKeys.likedBookList);
       case Failure(exception: final exception):
         emit(
-          state.copyWith(getBookIdsState: ViewData.error(exception: exception)),
+          state.copyWith(
+            updateBookIdState: ViewData.error(exception: exception),
+          ),
         );
     }
   }
@@ -107,6 +120,7 @@ class BookDetailCubit extends Cubit<BookDetailState> {
             updateBookIdState: const ViewData.loaded(data: null),
           ),
         );
+        getIt<RefreshManager>().triggerRefresh(RefreshKeys.likedBookList);
       case Failure(exception: final exception):
         emit(
           state.copyWith(
