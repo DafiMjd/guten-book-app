@@ -14,6 +14,7 @@ class AppGetIt {
 
   static void _initServices() {
     getIt
+      ..registerLazySingleton<DioCacheService>(DioCacheService.new)
       ..registerLazySingleton<Alice>(Alice.new)
       ..registerLazySingleton<ApiServices>(ApiServices.new)
       ..registerLazySingleton<SharedPreferenceService>(

@@ -33,7 +33,7 @@ class GtBookImage extends StatelessWidget {
     return GtExtendedImageNetwork(
       imgUrl: book.formats.imageJpeg ?? '',
       fit: BoxFit.contain,
-      clearMemoryCacheWhenDispose: true,
+      clearMemoryCacheWhenDispose: clearMemoryCacheWhenDispose,
       width: width ?? double.maxFinite,
       height: height ?? 150.w,
       compressionRatio: compressionRatio ?? 0.7,

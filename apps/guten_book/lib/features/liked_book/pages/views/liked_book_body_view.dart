@@ -40,9 +40,8 @@ class LikedBookBodyView extends StatelessWidget {
           separatorBuilder: (context, index) =>
               GtDivider(padding: const EdgeInsets.fromLTRB(54, 0, 0, 0).w),
           onRefresh: cubit.refresh,
-          onFetchData: () {
-            cubit.getBooks();
-          },
+          onErrorRetry: cubit.refresh,
+          onFetchData: cubit.getBooks,
           hasReachedMax: state.isAllLoaded,
           emptyWidget: const GtEmptyState(text: 'No saved books found'),
         );
