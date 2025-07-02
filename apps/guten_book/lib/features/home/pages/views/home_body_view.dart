@@ -25,6 +25,8 @@ class HomeBodyView extends StatelessWidget {
           onRefresh: cubit.refresh,
           onFetchData: cubit.getBooks,
           hasReachedMax: state.isAllLoaded,
+          emptyWidget: const GtEmptyState(text: 'No books found'),
+          onErrorRetry: cubit.refresh,
         );
       },
     );

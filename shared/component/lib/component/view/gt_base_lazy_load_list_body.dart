@@ -17,6 +17,7 @@ class GtBaseLazyLoadListBody<T> extends StatelessWidget {
     required this.onFetchData,
     required this.hasReachedMax,
     this.emptyWidget,
+    this.onErrorRetry,
   });
 
   final ViewData<void> loadState;
@@ -28,6 +29,7 @@ class GtBaseLazyLoadListBody<T> extends StatelessWidget {
   final VoidCallback onFetchData;
   final bool hasReachedMax;
   final Widget? emptyWidget;
+  final VoidCallback? onErrorRetry;
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +51,9 @@ class GtBaseLazyLoadListBody<T> extends StatelessWidget {
         ),
       );
     } else if (isFirstError) {
-      return Center(
-        child: Text(loadState.errorOrNull?.message ?? 'Error Occured'),
+      return GtErrorState(
+        text: loadState.errorOrNull?.message ?? 'Error Occured',
+        onRetry: onErrorRetry,
       );
     } else {
       return RefreshIndicator(
@@ -69,8 +72,26 @@ class GtBaseLazyLoadListBody<T> extends StatelessWidget {
           },
           hasError: isLazyLoadError,
           emptyBuilder: (_) => emptyWidget ?? const SizedBox(),
-          errorBuilder: (context) =>
-              Text(loadState.errorOrNull?.message ?? 'Error Occured'),
+          errorBuilder: (context) => Column(
+            children: [
+              Text(
+                loadState.errorOrNull?.message ?? 'Error Occured',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              if (onErrorRetry != null) ...[
+                Gap(4.w),
+                ElevatedButton(
+                  onPressed: onFetchData,
+                  child: Text(
+                    'Retry',
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleSmall?.copyWith(color: GtAppTheme.primary),
+                  ),
+                ),
+              ],
+            ],
+          ),
           hasReachedMax: hasReachedMax,
         ),
       );
