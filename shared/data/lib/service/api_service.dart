@@ -20,7 +20,7 @@ enum HttpRequestMethod {
 }
 
 class ApiServices {
-  static Future<Response<Map<String, dynamic>>> request({
+  Future<Response<Map<String, dynamic>>> request({
     required String path,
     required HttpRequestMethod method,
     Map<String, dynamic>? queryParameters,
