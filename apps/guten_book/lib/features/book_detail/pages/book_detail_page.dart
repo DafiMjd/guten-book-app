@@ -46,74 +46,69 @@ class _BookDetailPageState extends State<BookDetailPage> {
   Widget build(BuildContext context) {
     return BlocProvider.value(
       value: cubit,
-      child: Scaffold(
-        body: BlocBuilder<BookDetailCubit, BookDetailState>(
-          builder: (context, state) {
-            return ExprollablePageView(
-              controller: controller,
-              itemCount: widget.books.length,
-              itemBuilder: (context, index) {
-                final book = widget.books[index];
+      child: BlocBuilder<BookDetailCubit, BookDetailState>(
+        builder: (context, state) {
+          return ExprollablePageView(
+            controller: controller,
+            itemCount: widget.books.length,
+            itemBuilder: (context, index) {
+              final book = widget.books[index];
 
-                return PageGutter(
-                  gutterWidth: 8,
-                  child: Card(
-                    margin: EdgeInsets.zero,
-                    clipBehavior: Clip.antiAlias,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                      ),
-                    ),
-                    child: Stack(
-                      children: [
-                        Positioned.fill(
-                          child: CustomScrollView(
-                            controller: PageContentScrollController.of(context),
-                            slivers: [
-                              BookDetailHeaderView(book: book).toSliver(),
-                              GtDivider(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 16,
-                                ).w,
-                              ).toSliver(),
-                              BookDetailInfoView(book: book).toSliver(),
-                              GtDivider(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 16,
-                                ).w,
-                              ).toSliver(),
-                              BookDetailBodyView(book: book).toSliver(),
-                              SliverGap(24.w),
-                            ],
-                          ),
-                        ),
-                        BookDetailAppBarView(
-                          thresholdScrollOffset: 4,
-                          title: widget.books[index].title,
-                        ),
-                        Positioned(
-                          top: 0.0,
-                          right: 0.0,
-                          child: AdaptivePagePadding(
-                            child: IconButton(
-                              onPressed: () => Navigator.of(context).pop(),
-                              icon: const Icon(
-                                Icons.cancel,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+              return PageGutter(
+                gutterWidth: 8,
+                child: Card(
+                  margin: EdgeInsets.zero,
+                  clipBehavior: Clip.antiAlias,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20),
                     ),
                   ),
-                );
-              },
-            );
-          },
-        ),
+                  child: Stack(
+                    children: [
+                      Positioned.fill(
+                        child: CustomScrollView(
+                          controller: PageContentScrollController.of(context),
+                          slivers: [
+                            BookDetailHeaderView(book: book).toSliver(),
+                            GtDivider(
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 16,
+                              ).w,
+                            ).toSliver(),
+                            BookDetailInfoView(book: book).toSliver(),
+                            GtDivider(
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 16,
+                              ).w,
+                            ).toSliver(),
+                            BookDetailBodyView(book: book).toSliver(),
+                            SliverGap(24.w),
+                          ],
+                        ),
+                      ),
+                      BookDetailAppBarView(
+                        thresholdScrollOffset: 4,
+                        title: widget.books[index].title,
+                      ),
+                      Positioned(
+                        top: 0.0,
+                        right: 0.0,
+                        child: AdaptivePagePadding(
+                          child: IconButton(
+                            onPressed: () => Navigator.of(context).pop(),
+                            icon: const Icon(Icons.cancel, color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          );
+        },
       ),
     );
   }

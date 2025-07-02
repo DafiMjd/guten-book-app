@@ -24,10 +24,6 @@ class BookGridWidget extends StatelessWidget {
             BookDetailPage(books: books, initialIndex: index),
       ),
     );
-
-    // context.pushRoute(
-    //   BookDetailRoute(books: state.books, initialIndex: index),
-    // );
   }
 
   @override
