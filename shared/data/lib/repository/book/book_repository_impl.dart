@@ -3,7 +3,7 @@ import '../../data.dart';
 class BookRepositoryImpl implements BookRepository {
   @override
   Future<Map<String, dynamic>> getBooks(Map<String, dynamic>? params) async {
-    final res = await ApiServices.request(
+    final res = await getIt<ApiServices>().request(
       path: '/books',
       method: HttpRequestMethod.get,
       queryParameters: params,

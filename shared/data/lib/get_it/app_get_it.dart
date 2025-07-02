@@ -13,7 +13,12 @@ class AppGetIt {
   }
 
   static void _initServices() {
-    getIt.registerLazySingleton<Alice>(Alice.new);
+    getIt
+      ..registerLazySingleton<Alice>(Alice.new)
+      ..registerLazySingleton<ApiServices>(ApiServices.new)
+      ..registerLazySingleton<SharedPreferenceService>(
+        SharedPreferenceService.new,
+      );
   }
 
   static void _initRepositories() {

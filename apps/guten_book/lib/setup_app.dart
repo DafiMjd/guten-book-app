@@ -11,6 +11,7 @@ import 'routers/app_router.dart';
 class SetupApp {
   static void setup() {
     runZonedGuarded(() {
+      WidgetsFlutterBinding.ensureInitialized();
       AppGetIt.setup(
         additionalDependenciesCallback: () {
           getIt.registerLazySingleton<AppRouter>(AppRouter.new);
