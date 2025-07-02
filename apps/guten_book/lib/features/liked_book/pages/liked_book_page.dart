@@ -1,7 +1,6 @@
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 
-import '../../../local_dependencies.dart';
 import '../cubit/liked_book_cubit.dart';
 import 'views/index.dart';
 

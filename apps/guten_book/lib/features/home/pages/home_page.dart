@@ -1,7 +1,6 @@
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 
-import '../../../local_dependencies.dart';
 import '../cubit/home_cubit.dart';
 import 'views/index.dart';
 

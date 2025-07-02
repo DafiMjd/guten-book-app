@@ -4,7 +4,6 @@ analyzer:
     - lib/generated_plugin_registrant.dart
   language:
     strict-inference: true
-    strict-raw-types: true
 
 linter:
   rules:

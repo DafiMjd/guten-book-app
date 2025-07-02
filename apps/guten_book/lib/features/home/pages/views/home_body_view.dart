@@ -1,9 +1,7 @@
 import 'package:component/component.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../local_dependencies.dart';
 import '../../cubit/index.dart';
 import 'widgets/index.dart';
 

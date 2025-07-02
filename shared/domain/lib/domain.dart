@@ -1,3 +1,4 @@
+export 'cubit/index.dart';
 export 'entity/index.dart';
 export 'get_it/index.dart';
 export 'helper/index.dart';

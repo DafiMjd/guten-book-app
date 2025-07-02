@@ -21,7 +21,6 @@ dependencies:
   floating_draggable_widget: ^2.3.0
   flutter:
     sdk: flutter
-  flutter_bloc: ^9.1.1
   freezed_annotation: ^3.0.0
 
 
