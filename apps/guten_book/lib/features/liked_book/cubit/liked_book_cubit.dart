@@ -65,7 +65,14 @@ class LikedBookCubit extends RefreshableCubit<LikedBookState> {
   }
 
   Future<void> getBooks() async {
-    if (state.isAllLoaded) {
+    if (state.isAllLoaded ||
+        state.booksLoadState.isLoading ||
+        state.savedBookIdsState.isLoading) {
+      return;
+    }
+
+    if (state.savedBookIdsState.isLoaded && state.savedBookIds.isEmpty) {
+      emit(state.copyWith(booksLoadState: const ViewData.loaded(data: null)));
       return;
     }
 
