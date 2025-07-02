@@ -15,10 +15,10 @@ sealed class BookDetailState with _$BookDetailState {
   }) = _BookDetailState;
 
   factory BookDetailState.initial() => const BookDetailState(
-        updateBookIdState: ViewData.initial(),
-        getBookIdsState: ViewData.initial(),
-        bookIds: [],
-        books: [],
-        bookMap: {},
-      );
+    updateBookIdState: ViewData.initial(),
+    getBookIdsState: ViewData.initial(),
+    bookIds: [],
+    books: [],
+    bookMap: {},
+  );
 }

@@ -14,10 +14,10 @@ class BookDetailCubit extends Cubit<BookDetailState> {
 
   void onBuild({required List<BookEntity> books}) {
     emit(state.copyWith(books: books));
-    getBookIds();
+    getSavedBookIds();
   }
 
-  Future<void> getBookIds() async {
+  Future<void> getSavedBookIds() async {
     emit(state.copyWith(getBookIdsState: const ViewData.loading()));
     final response = await usecase.loadBookIds();
 
@@ -101,10 +101,17 @@ class BookDetailCubit extends Cubit<BookDetailState> {
 
     switch (response) {
       case Success(value: final res):
-        emit(state.copyWith(bookIds: res));
+        emit(
+          state.copyWith(
+            bookIds: res,
+            updateBookIdState: const ViewData.loaded(data: null),
+          ),
+        );
       case Failure(exception: final exception):
         emit(
-          state.copyWith(getBookIdsState: ViewData.error(exception: exception)),
+          state.copyWith(
+            updateBookIdState: ViewData.error(exception: exception),
+          ),
         );
     }
   }

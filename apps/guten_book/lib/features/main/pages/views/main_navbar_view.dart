@@ -49,7 +49,7 @@ class MainNavbarView extends StatelessWidget {
               ),
               Expanded(
                 child: MainNavbarWidget(
-                  label: 'Loved Books',
+                  label: 'Liked Books',
                   inactivePath: Assets.book.svg.icHeartInactive,
                   activePath: Assets.book.svg.icHeartActive,
                   isActive: selectedIndex == 1,
