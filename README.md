@@ -8,6 +8,10 @@ Guten Book
 
 ## How To Run
 
+- install packages
+  ```
+  make get / melos run get
+  ```
 - production:
   ```
   flutter run --flavor prod --target apps/guten_book/lib/launcher/main_prod.dart

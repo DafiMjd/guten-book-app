@@ -37,3 +37,13 @@ migrate_working_dir/
 # FVM
 .fvm/
 .fvm/flutter_sdk
+.fvmrc
+
+# VSCode
+.vscode/settings.json
+
+# Android Generated
+*.cc
+*.h
+*.cmake
+
