@@ -4,9 +4,18 @@ import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailAuthorWidget extends StatelessWidget {
-  const BookDetailAuthorWidget({super.key, required this.authors});
+  const BookDetailAuthorWidget({
+    super.key,
+    required this.authors,
+    required this.isSaved,
+    required this.onSaveTapped,
+    required this.enabled,
+  });
 
   final List<AuthorEntity> authors;
+  final bool isSaved;
+  final VoidCallback onSaveTapped;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +43,20 @@ class BookDetailAuthorWidget extends StatelessWidget {
           ),
         ),
         Gap(16.w),
-        SvgPicture.asset(
-          Assets.book.svg.icHeartInactive,
-          width: 32.w,
-          height: 32.w,
-          colorFilter: const ColorFilter.mode(
-            GtAppTheme.secondary,
-            BlendMode.srcIn,
+        GestureDetector(
+          onTap: enabled ? onSaveTapped : null,
+          child: SvgPicture.asset(
+            isSaved
+                ? Assets.book.svg.icHeartActive
+                : Assets.book.svg.icHeartInactive,
+            width: 32.w,
+            height: 32.w,
+            colorFilter: ColorFilter.mode(
+              GtAppTheme.secondary.withValues(alpha: enabled ? 1 : 0.1),
+              BlendMode.srcIn,
+            ),
+            package: 'component',
           ),
-          package: 'component',
         ),
       ],
     );

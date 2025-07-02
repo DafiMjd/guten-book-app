@@ -7,6 +7,8 @@ class DomainGetIt {
   }
 
   static void _initUsecases() {
-    getIt.registerLazySingleton<BookUsecase>(BookUsecase.new);
+    getIt
+      ..registerLazySingleton<BookUsecase>(BookUsecase.new)
+      ..registerLazySingleton<BookDetailUsecase>(BookDetailUsecase.new);
   }
 }

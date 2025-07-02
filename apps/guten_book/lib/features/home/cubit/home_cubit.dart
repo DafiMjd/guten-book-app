@@ -11,7 +11,7 @@ class HomeCubit extends Cubit<HomeState> {
   final BookUsecase usecase;
 
   void onBuild() {
-    // getBooks();
+    getBooks();
   }
 
   Future<void> refresh() async {
