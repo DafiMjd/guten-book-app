@@ -15,7 +15,9 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$BookDetailState {
 
- ViewData<void> get updateBookIdState; ViewData<void> get getBookIdsState; List<int> get bookIds; List<BookEntity> get books;// int = id, bool = isSaved
+ ViewData<void> get updateBookIdState; ViewData<void> get getBookIdsState;// It is used to determine which books are marked as saved in the UI and for related logic.
+ List<int> get bookIds;// used to show list of books in book detail page
+ List<BookEntity> get books;// int = id, bool = isSaved
  Map<int, bool> get bookMap;
 /// Create a copy of BookDetailState
 /// with the given fields replaced by the non-null parameter values.
@@ -105,14 +107,18 @@ class _BookDetailState implements BookDetailState {
 
 @override final  ViewData<void> updateBookIdState;
 @override final  ViewData<void> getBookIdsState;
+// It is used to determine which books are marked as saved in the UI and for related logic.
  final  List<int> _bookIds;
+// It is used to determine which books are marked as saved in the UI and for related logic.
 @override List<int> get bookIds {
   if (_bookIds is EqualUnmodifiableListView) return _bookIds;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_bookIds);
 }
 
+// used to show list of books in book detail page
  final  List<BookEntity> _books;
+// used to show list of books in book detail page
 @override List<BookEntity> get books {
   if (_books is EqualUnmodifiableListView) return _books;
   // ignore: implicit_dynamic_type

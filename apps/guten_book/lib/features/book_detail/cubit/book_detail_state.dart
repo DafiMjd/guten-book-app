@@ -8,7 +8,9 @@ sealed class BookDetailState with _$BookDetailState {
   const factory BookDetailState({
     required ViewData<void> updateBookIdState,
     required ViewData<void> getBookIdsState,
+    // It is used to determine which books are marked as saved in the UI and for related logic.
     required List<int> bookIds,
+    // used to show list of books in book detail page
     required List<BookEntity> books,
     // int = id, bool = isSaved
     required Map<int, bool> bookMap,
