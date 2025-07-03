@@ -20,9 +20,9 @@ dependencies:
     path: ../../shared/domain
   firebase_core: ^3.15.0
   floating_draggable_widget: ^2.3.0
-  flutter_native_splash: ^2.4.6
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.4.6
   freezed_annotation: ^3.0.0
 
 

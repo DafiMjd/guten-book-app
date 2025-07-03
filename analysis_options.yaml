@@ -2,8 +2,6 @@ analyzer:
   exclude:
     - test/resources/*
     - lib/generated_plugin_registrant.dart
-  language:
-    strict-inference: true
 
 linter:
   rules:
