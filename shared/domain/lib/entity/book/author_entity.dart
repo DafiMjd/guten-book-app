@@ -23,5 +23,15 @@ class AuthorEntity with _$AuthorEntity {
 
   Map<String, Object?> toJson() => _$AuthorEntityToJson(this);
 
-  String get yearToString => '($birthYear-$deathYear)';
+  String get yearToString {
+    if (birthYear != null && deathYear != null) {
+      return '($birthYear-$deathYear)';
+    }
+
+    if (birthYear != null) {
+      return '($birthYear)';
+    }
+
+    return '';
+  }
 }
