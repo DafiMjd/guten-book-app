@@ -29,8 +29,8 @@ jobs:
       #   uses: bluefireteam/melos-action@v3
       # - name: Clean and Install Flutter dependencies
       #   run: make clean_get
-      - name: List APK Output
-        run: ls build/app/outputs/flutter-apk
+      # - name: List APK Output
+      #   run: ls apps/guten_book/build/app/outputs/flutter-apk
       - name: Build the APK
         run: flutter build apk --flavor staging --target apps/guten_book/lib/launcher/main_staging.dart --release
       - name: Upload artifact to Firebase App Distribution
@@ -39,6 +39,6 @@ jobs:
           appId: ${{secrets.STAGING_FIREBASE_APP_ID}}
           serviceCredentialsFileContent: ${{secrets.CREDENTIAL_FILE_CONTENT}}
           groups: Tester
-          file: build/app/outputs/flutter-apk/app-staging-release.apk
+          file: apps/guten_book/build/app/outputs/flutter-apk/app-staging-release.apk
         
           
