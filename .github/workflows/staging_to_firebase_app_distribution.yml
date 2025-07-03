@@ -3,7 +3,7 @@ name: Staging to Firebase App Distribution
 on:
   push:
     branches:
-      - dev
+      - staging
 
 jobs:
   deploy_android:
