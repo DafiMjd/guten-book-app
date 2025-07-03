@@ -1,0 +1,21 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "guten-book-app-staging",
+                    "appId": "1:1025238775956:android:6094889481b659e80bdc81",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "guten-book-app-staging",
+                    "configurations": {
+                        "android": "1:1025238775956:android:6094889481b659e80bdc81"
+                    }
+                }
+            }
+        }
+    }
+}
