@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1025238775956",
+    "project_id": "guten-book-app-staging",
+    "storage_bucket": "guten-book-app-staging.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025238775956:android:6094889481b659e80bdc81",
+        "android_client_info": {
+          "package_name": "com.guten.book"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh-i_NrvdUDpEZ40xCQtNqXn3k-VVfk7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025238775956:android:9cc943ef3e1463d60bdc81",
+        "android_client_info": {
+          "package_name": "com.guten.book.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh-i_NrvdUDpEZ40xCQtNqXn3k-VVfk7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
