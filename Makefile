@@ -5,6 +5,11 @@ get_app:
 get_deps:
 	cd shared/dependencies && fvm flutter pub get && cd ../..
 
+clean:
+	melos run clean
+clean_get:
+	melos run clean && melos run get
+
 format:
 	melos run format
 
