@@ -18,6 +18,7 @@ dependencies:
     path: ../../shared/dependencies
   domain:
     path: ../../shared/domain
+  firebase_core: ^3.15.0
   floating_draggable_widget: ^2.3.0
   flutter:
     sdk: flutter
