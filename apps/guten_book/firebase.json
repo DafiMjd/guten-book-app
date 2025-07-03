@@ -5,14 +5,23 @@
                 "default": {
                     "projectId": "guten-book-app-staging",
                     "appId": "1:1025238775956:android:6094889481b659e80bdc81",
-                    "fileOutput": "android/app/google-services.json"
+                    "fileOutput": "android/app/src/prod/google-services.json"
+                }
+            },
+            "ios": {
+                "default": {
+                    "projectId": "guten-book-app-staging",
+                    "appId": "1:1025238775956:ios:4ec3e5551c8d5e340bdc81",
+                    "uploadDebugSymbols": false,
+                    "fileOutput": "ios/Runner/GoogleService-Info.plist"
                 }
             },
             "dart": {
                 "lib/firebase_options.dart": {
                     "projectId": "guten-book-app-staging",
                     "configurations": {
-                        "android": "1:1025238775956:android:6094889481b659e80bdc81"
+                        "android": "1:1025238775956:android:6094889481b659e80bdc81",
+                        "ios": "1:1025238775956:ios:4ec3e5551c8d5e340bdc81"
                     }
                 }
             }

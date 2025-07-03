@@ -26,10 +26,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -58,5 +55,14 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1025238775956',
     projectId: 'guten-book-app-staging',
     storageBucket: 'guten-book-app-staging.firebasestorage.app',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCFtPm2odFQ_gdQ_i5qD90dfe-gzcFMKTU',
+    appId: '1:1025238775956:ios:4ec3e5551c8d5e340bdc81',
+    messagingSenderId: '1025238775956',
+    projectId: 'guten-book-app-staging',
+    storageBucket: 'guten-book-app-staging.firebasestorage.app',
+    iosBundleId: 'com.guten.book',
   );
 }

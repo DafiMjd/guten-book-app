@@ -4,6 +4,7 @@ import 'package:data/data.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:domain/get_it/index.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'firebase_options.dart';
@@ -20,9 +21,11 @@ class SetupApp {
           DomainGetIt.setup();
         },
       );
-      await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform,
-      );
+      if (defaultTargetPlatform == TargetPlatform.iOS) {
+        await Firebase.initializeApp(
+          options: DefaultFirebaseOptions.currentPlatform,
+        );
+      }
       getIt<Alice>().setNavigatorKey(getIt<AppRouter>().navigatorKey);
       runApp(const MainApp());
     }, (error, stackTrace) {});
