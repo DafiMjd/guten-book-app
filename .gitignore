@@ -47,3 +47,9 @@ migrate_working_dir/
 *.h
 *.cmake
 
+# Firebase
+apps/guten_book/android/app/src/prod/google-services.json
+apps/guten_book/android/app/src/staging/google-services.json
+apps/guten_book/ios/Runner/prod
+apps/guten_book/ios/Runner/staging
+
