@@ -1,4 +1,4 @@
-package com.example.guten_book
+package com.guten.book
 
 import io.flutter.embedding.android.FlutterActivity
 
