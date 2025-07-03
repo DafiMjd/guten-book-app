@@ -32,10 +32,12 @@ class BookDetailAuthorWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(e.name, style: Theme.of(context).textTheme.titleLarge),
-                  Text(
-                    e.yearToString,
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
+                  if (e.yearToString.isNotEmpty) ...[
+                    Text(
+                      e.yearToString,
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                  ],
                   if (!isLast) Gap(4.w),
                 ],
               );
