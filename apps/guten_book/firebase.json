@@ -5,7 +5,7 @@
                 "default": {
                     "projectId": "guten-book-app-staging",
                     "appId": "1:1025238775956:android:6094889481b659e80bdc81",
-                    "fileOutput": "android/app/src/prod/google-services.json"
+                    "fileOutput": "android/app/src/google-services.json"
                 }
             },
             "ios": {
