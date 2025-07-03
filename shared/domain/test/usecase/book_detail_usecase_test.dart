@@ -19,7 +19,10 @@ void main() {
       final expectedOutput = BookDummy.idVisibilityMap;
 
       // Act
-      final output = bookDetailUsecase.formBookMap(input, BookDummy.savedBookIds);
+      final output = bookDetailUsecase.formBookMap(
+        input,
+        BookDummy.savedBookIds,
+      );
       // Assert
       expect(output, expectedOutput);
     });
